@@ -22,6 +22,8 @@ use Drupal\editor\Entity\Editor;
  */
 function editor_advanced_image_form_editor_image_dialog_alter(&$form, FormStateInterface $form_state, $form_id) {
   $argument = $form_state->getBuildInfo()['args'][0];
+  $settings = $argument->getSettings();
+
   // In case the only argument we get is the Editor instead of the FilterFormat.
   if ($argument instanceof Editor) {
     $argument = $argument->getFilterFormat();
@@ -84,10 +86,14 @@ function editor_advanced_image_form_editor_image_dialog_alter(&$form, FormStateI
     '#weight' => 2,
   ];
 
+  $default_class = NULL;
+  if (!empty($settings['plugins']['editoradvancedimage']['default_class'])) {
+    $default_class = '<br>' . t('Default: <code>:classes</code>.', [':classes' => $settings['plugins']['editoradvancedimage']['default_class']]);
+  }
   $form['attributes']['class'] = [
     '#type'          => 'textfield',
     '#title'         => t('CSS classes'),
-    '#description'   => t('List of CSS classes to add to the image, separated by spaces.'),
+    '#description'   => t('List of CSS classes to add to the image, separated by spaces.') . $default_class,
     '#default_value' => $get_default_value('class'),
     '#maxlength'     => 512,
     '#access'        => $is_accessible('class'),

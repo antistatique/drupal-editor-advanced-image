@@ -19,6 +19,9 @@
     requires: 'drupalimage',
 
     beforeInit: function (editor) {
+      // Retrieve config from Drupal\editor_advanced_image\Plugin\CKEditorPlugin::getConfig.
+      var defaultClasses = editor.config.defaultClasses.trim()
+
       // Override the image2 widget definition to handle the additional
       // title, class and id attributes.
       editor.on('widgetDefinition', function (event) {
@@ -71,7 +74,7 @@
           originalDowncast.call(this, img)
 
           img.attributes['title'] = this.data['title']
-          img.attributes['class'] = this.data['class']
+          img.attributes['class'] = this.data['class'] ? this.data['class'].trim() : defaultClasses
           img.attributes['id'] = this.data['id']
 
           return img
@@ -93,7 +96,9 @@
 
           // Parse the title attribute.
           data['title'] = element.attributes['title']
-          data['class'] = element.attributes['class']
+          // Parse the class attribute & remove default class from it.
+          data['class'] = element.attributes['class'] ? element.attributes['class'].trim() : defaultClasses
+          // Parse the id attribute.
           data['id'] = element.attributes['id']
 
           return element

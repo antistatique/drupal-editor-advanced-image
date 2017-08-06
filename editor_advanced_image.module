@@ -103,7 +103,7 @@ function editor_advanced_image_form_editor_image_dialog_alter(&$form, FormStateI
   $form['attributes']['id'] = [
     '#type'          => 'textfield',
     '#title'         => t('ID'),
-    '#description'   => t('Allows linking to this content using a <a href="https://en.wikipedia.org/wiki/Fragment_identifier">URL fragment</a>). Must be unique.'),
+    '#description'   => t('Allows linking to this content using a <a href="https://en.wikipedia.org/wiki/Fragment_identifier">URL fragment</a>. Must be unique.'),
     '#default_value' => $get_default_value('id'),
     '#maxlength'     => 512,
     '#access'        => $is_accessible('id'),

@@ -20,7 +20,7 @@
 
     beforeInit: function (editor) {
       // Retrieve config from Drupal\editor_advanced_image\Plugin\CKEditorPlugin::getConfig.
-      var defaultClasses = editor.config.defaultClasses.trim()
+      var defaultClasses = editor.config.defaultClasses ? editor.config.defaultClasses.trim() : ''
 
       // Override the image2 widget definition to handle the additional
       // title, class and id attributes.

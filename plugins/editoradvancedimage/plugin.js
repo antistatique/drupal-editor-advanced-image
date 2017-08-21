@@ -19,6 +19,9 @@
     requires: 'drupalimage',
 
     beforeInit: function (editor) {
+      // Add CSS file.
+      editor.addContentsCss(this.path + 'css/ckeditor.editoradvancedimage.css')
+
       // Retrieve config from Drupal\editor_advanced_image\Plugin\CKEditorPlugin::getConfig.
       var defaultClasses = editor.config.defaultClasses ? editor.config.defaultClasses.trim() : ''
 

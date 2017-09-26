@@ -33,32 +33,6 @@
           return
         }
 
-        // Override default features definitions for editoradvancedimage.
-        CKEDITOR.tools.extend(widgetDefinition.features, {
-          title: {
-            requiredContent: 'img[title]'
-          },
-          class: {
-            requiredContent: 'img[class]'
-          },
-          id: {
-            requiredContent: 'img[id]'
-          }
-        }, true)
-
-        // Extend requiredContent & allowedContent.
-        // CKEDITOR.style is an immutable object: we cannot modify its
-        // definition to extend requiredContent. Hence we get the definition,
-        // modify it, and pass it to a new CKEDITOR.style instance.
-        var requiredContent = widgetDefinition.requiredContent.getDefinition()
-        requiredContent.attributes['title'] = ''
-        requiredContent.attributes['class'] = ''
-        requiredContent.attributes['id'] = ''
-        widgetDefinition.requiredContent = new CKEDITOR.style(requiredContent)
-        widgetDefinition.allowedContent.img.attributes['!title'] = true
-        widgetDefinition.allowedContent.img.attributes['!class'] = true
-        widgetDefinition.allowedContent.img.attributes['!title'] = true
-
         // Protected; keys of the widget data to be sent to the Drupal dialog.
         // Append to the values defined by the drupalimage plugin.
         // @see core/modules/ckeditor/js/plugins/drupalimage/plugin.js

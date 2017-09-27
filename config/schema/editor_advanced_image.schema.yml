@@ -1,0 +1,8 @@
+# Plugin \Drupal\ckeditor\Plugin\ckeditor\plugin\EditorAdvancedImage
+ckeditor.plugin.editoradvancedimage:
+  type: mapping
+  label: 'Editor Advanced Image'
+  mapping:
+    default_class:
+      type: string
+      label: 'Default image class(es)'

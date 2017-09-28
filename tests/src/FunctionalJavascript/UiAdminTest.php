@@ -91,7 +91,6 @@ class UiAdminTest extends UiTestBase {
     $this->testAdminForm();
 
     $this->fillField('editor[settings][plugins][editoradvancedimage][default_class]', 'my-class');
-    $this->assertFieldByName('editor[settings][plugins][editoradvancedimage][default_class]', 'my-class');
 
     // Submit the new value.
     $this->pressButton('edit-actions-submit');

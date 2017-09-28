@@ -10,6 +10,11 @@ Allows to define the following attributes:
 - class
 - id
 
+By using Editor Advanced Image, you will also be able to:
+
+- define a default class for every images on an Editor
+  (such `img-fluid` or `img-responsive`).
+
 ## Standard usage scenario
 
 1. Install the module.

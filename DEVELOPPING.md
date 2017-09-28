@@ -13,6 +13,53 @@ on your environment:
   * drush
   * Latest dev release of Drupal 8.x.
 
+## 🏆 Tests
+
+Editor Advanced Image use JavascriptTestBase to test
+Javascript web-based behaviors and interactions.
+
+For tests you need a working database connection and for browser tests
+your Drupal installation needs to be reachable via a web server.
+Copy the phpunit config file:
+
+  ```bash
+  $ cd core
+  $ cp phpunit.xml.dist phpunit.xml
+  ```
+
+You must provide `SIMPLETEST_BASE_URL`, Eg. `http://localhost`.
+You must provide `SIMPLETEST_DB`,
+Eg. `sqlite://localhost/build/editor_advanced_image.sqlite`.
+
+Start PhantomJS:
+
+  ```bash
+  phantomjs --ssl-protocol=any --ignore-ssl-errors=true \
+  vendor/jcalderonzumba/gastonjs/src/Client/main.js 8510 1024 768&
+  ```
+
+Run the javascript functional tests:
+
+  ```bash
+  # You must be on the drupal-root folder - usually /web.
+  $ cd web
+  $ ../vendor/bin/phpunit -c core --testsuite functional-javascript \
+  --group editor_advanced_image
+  ```
+
+Debug using
+
+  ```bash
+  # You must be on the drupal-root folder - usually /web.
+  $ cd web
+  $ ../vendor/bin/phpunit -c core --testsuite functional-javascript \
+  --group editor_advanced_image \
+  --printer="\Drupal\Tests\Listeners\HtmlOutputPrinter" --stop-on-error
+  ```
+
+You must provide a `BROWSERTEST_OUTPUT_DIRECTORY`,
+Eg. `/path/to/webroot/sites/simpletest/browser_output`.
+
 ## 🚔 Check Javascript best practices
 
 You need to run `yarn` before using ESLint. Then run the commmand:

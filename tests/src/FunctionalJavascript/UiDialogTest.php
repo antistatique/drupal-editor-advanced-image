@@ -119,12 +119,20 @@ class UiDialogTest extends UiTestBase {
   }
 
   /**
+   * Tests the node add page is reachable.
+   */
+  public function testNodeAddPageReachable() {
+    $this->drupalLogin($this->adminUser);
+    $this->drupalGet('node/add/page');
+    $this->isSuccessful();
+  }
+
+  /**
    * Tests CKEditor button image still apprear, works & dialog open.
    */
   public function testImageBaseDialogWorks() {
     $this->drupalLogin($this->adminUser);
     $this->drupalGet('node/add/page');
-    $this->assertSession()->statusCodeEquals(200);
 
     // Asserts the Image button is present.
     $this->assertElementPresent('#cke_edit-body-0-value .cke_button__drupalimage');

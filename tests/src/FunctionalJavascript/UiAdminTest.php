@@ -56,12 +56,20 @@ class UiAdminTest extends UiTestBase {
   }
 
   /**
+   * Tests the node add page is reachable.
+   */
+  public function testAdminFormatsManageReachable() {
+    $this->drupalLogin($this->adminUser);
+    $this->drupalGet('admin/config/content/formats/manage/full_html');
+    $this->isSuccessful();
+  }
+
+  /**
    * Tests a CKEditor editor and visibilit of Editor Advanced Image config.
    */
   public function testAdminForm() {
     $this->drupalLogin($this->adminUser);
     $this->drupalGet('admin/config/content/formats/manage/full_html');
-    $this->assertSession()->statusCodeEquals(200);
 
     // Select the "CKEditor" editor and click the "Save configuration" button.
     $this->fillField('Text editor', 'ckeditor');

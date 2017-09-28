@@ -100,4 +100,15 @@ abstract class UiTestBase extends JavascriptTestBase {
     echo "\n" . $screenshot . "\n";
   }
 
+  /**
+   * Checks if HTTP Status code is Successful (2xx | 304)
+   *
+   * @return bool
+   *   Does the current staus code is Successful (2xx | 304).
+   */
+  public function isSuccessful() {
+    $actual = $this->getSession()->getStatusCode();
+    return ($actual >= 200 && $actual < 300) || $actual == 304;
+  }
+
 }

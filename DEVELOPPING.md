@@ -5,6 +5,19 @@ https://www.drupal.org/project/issues/editor_advanced_image
 * Pull requests can be made against
 https://github.com/antistatique/drupal-editor-advanced-image/pulls
 
+## 📦 Repositories
+
+Drupal repo
+
+  ```
+  git remote add drupal https://wengerk@git.drupal.org:project/editor_advanced_image.git
+  ```
+
+Github repo
+  ```
+  git remote add github https://github.com/antistatique/drupal-editor-advanced-image.git
+  ```
+
 ## 🔧 Prerequisites
 
 First of all, you need to have the following tools installed globally
@@ -72,8 +85,11 @@ You need to run `yarn` before using ESLint. Then run the commmand:
 
 You need to run composer before using PHPCS. Then register the Drupal
 and DrupalPractice Standard with PHPCS:
-`./vendor/bin/phpcs --config-set installed_paths \
-`pwd`/vendor/drupal/coder/coder_sniffer`
+
+  ```bash
+  $ ./vendor/bin/phpcs --config-set installed_paths \
+  `pwd`/vendor/drupal/coder/coder_sniffer
+  ```
 
 ### Command Line Usage
 

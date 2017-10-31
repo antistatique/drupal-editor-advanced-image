@@ -56,7 +56,9 @@ Run the javascript functional tests:
   ```bash
   # You must be on the drupal-root folder - usually /web.
   $ cd web
-  $ ../vendor/bin/phpunit -c core --testsuite functional-javascript \
+  $ SIMPLETEST_DB="sqlite://localhost//tmp/editor_advanced_image.sqlite" \
+  SIMPLETEST_BASE_URL='http://d8.dev' \
+  ../vendor/bin/phpunit -c core --testsuite functional-javascript \
   --group editor_advanced_image
   ```
 
@@ -65,7 +67,9 @@ Debug using
   ```bash
   # You must be on the drupal-root folder - usually /web.
   $ cd web
-  $ ../vendor/bin/phpunit -c core --testsuite functional-javascript \
+  $ SIMPLETEST_DB="sqlite://localhost//tmp/editor_advanced_image.sqlite" \
+  SIMPLETEST_BASE_URL='http://d8.dev' \
+  ../vendor/bin/phpunit -c core --testsuite functional-javascript \
   --group editor_advanced_image \
   --printer="\Drupal\Tests\Listeners\HtmlOutputPrinter" --stop-on-error
   ```

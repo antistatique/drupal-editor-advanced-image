@@ -71,6 +71,11 @@
 
           element = originalUpcast.call(this, element, data)
 
+          // Check the originalUpcast detect an <img> element.
+          if (typeof element === 'undefined') {
+            return
+          }
+
           // Parse the title attribute.
           data['title'] = element.attributes['title']
           // Parse the class attribute & remove default class from it.

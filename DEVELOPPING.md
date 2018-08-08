@@ -10,7 +10,7 @@ https://github.com/antistatique/drupal-editor-advanced-image/pulls
 Drupal repo
 
   ```
-  git remote add drupal https://wengerk@git.drupal.org:project/editor_advanced_image.git
+  git remote add drupal git@git.drupal.org:project/editor_advanced_image.git
   ```
 
 Github repo

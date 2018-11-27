@@ -76,12 +76,18 @@
             return
           }
 
+          // Apply attributes on <figure> when dealing with captioned images.
+          var el = element
+          if (el.name == 'figure') {
+            el = el.children[0]
+          }
+
           // Parse the title attribute.
-          data['title'] = element.attributes['title']
+          data['title'] = el.attributes['title']
           // Parse the class attribute & remove default class from it.
-          data['class'] = element.attributes['class'] ? element.attributes['class'].trim() : defaultClasses
+          data['class'] = el.attributes['class'] ? el.attributes['class'].trim() : defaultClasses
           // Parse the id attribute.
-          data['id'] = element.attributes['id']
+          data['id'] = el.attributes['id']
 
           return element
         }

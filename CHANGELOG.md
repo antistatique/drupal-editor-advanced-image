@@ -1,7 +1,7 @@
 CHANGELOG
 ---------
 
-## NEXT RELEASE
+## 8.x-1.0-beta5 (2018-11-29)
  - fix #2987982 - Classes not saving on captioned images
  - fix #3010610 - Removes links on images
 

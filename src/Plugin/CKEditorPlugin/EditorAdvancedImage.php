@@ -89,7 +89,29 @@ class EditorAdvancedImage extends PluginBase implements CKEditorPluginInterface,
    * {@inheritdoc}
    */
   public function isEnabled(Editor $editor) {
-    return TRUE;
+    // Check if DrupalImage exist.
+    $settings = $editor->getSettings();
+
+    if($this->checkImageEnable($settings["toolbar"]['rows'][0])) {
+      return TRUE;
+    }
+    return FALSE;
+  }
+
+  /**
+   * Check if DrupalImage exist.
+   * @param $list
+   * @return bool
+   */
+  public function checkImageEnable($list) {
+    foreach($list as $items) {
+      foreach ($items["items"] as $item) {
+        if ('DrupalImage' === $item) {
+          return TRUE;
+        }
+      }
+    }
+    return FALSE;
   }
 
 }

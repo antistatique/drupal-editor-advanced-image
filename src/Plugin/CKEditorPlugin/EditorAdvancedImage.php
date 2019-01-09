@@ -89,7 +89,7 @@ class EditorAdvancedImage extends PluginBase implements CKEditorPluginInterface,
    * {@inheritdoc}
    */
   public function isEnabled(Editor $editor) {
-    // Check if DrupalImage exist.
+    // Check if a DrupalImage exist.
     $settings = $editor->getSettings();
 
     if($this->checkImageEnable($settings["toolbar"]['rows'][0])) {
@@ -99,7 +99,8 @@ class EditorAdvancedImage extends PluginBase implements CKEditorPluginInterface,
   }
 
   /**
-   * Check if DrupalImage exist.
+   * Check if a DrupalImage exist.
+   * 
    * @param $list
    * @return bool
    */

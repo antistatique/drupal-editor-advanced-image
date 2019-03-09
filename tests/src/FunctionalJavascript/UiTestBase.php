@@ -2,13 +2,13 @@
 
 namespace Drupal\Tests\editor_advanced_image\FunctionalJavascript;
 
-use Drupal\FunctionalJavascriptTests\JavascriptTestBase;
+use Drupal\FunctionalJavascriptTests\WebDriverTestBase;
 use Behat\Mink\Exception\ElementNotFoundException;
 
 /**
  * Has some additional helper methods to make test code more readable.
  */
-abstract class UiTestBase extends JavascriptTestBase {
+abstract class UiTestBase extends WebDriverTestBase {
 
   /**
    * Finds field (input, textarea, select) with specified locator.
@@ -98,17 +98,6 @@ abstract class UiTestBase extends JavascriptTestBase {
     $screenshot = \Drupal::root() . '/sites/default/files/simpletest/screenshot-' . time() . '.jpg';
     $this->createScreenshot($screenshot);
     echo "\n" . $screenshot . "\n";
-  }
-
-  /**
-   * Checks if HTTP Status code is Successful (2xx | 304)
-   *
-   * @return bool
-   *   Does the current staus code is Successful (2xx | 304).
-   */
-  public function isSuccessful() {
-    $actual = $this->getSession()->getStatusCode();
-    return ($actual >= 200 && $actual < 300) || $actual == 304;
   }
 
 }

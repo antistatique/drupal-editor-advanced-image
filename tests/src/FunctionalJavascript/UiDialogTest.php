@@ -124,7 +124,7 @@ class UiDialogTest extends UiTestBase {
   public function testNodeAddPageReachable() {
     $this->drupalLogin($this->adminUser);
     $this->drupalGet('node/add/page');
-    $this->isSuccessful();
+    $this->assertSession()->elementExists('css', 'form.node-page-form');
   }
 
   /**

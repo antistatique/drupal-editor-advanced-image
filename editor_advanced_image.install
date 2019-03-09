@@ -13,7 +13,9 @@ use Drupal\Core\Url;
  */
 function editor_advanced_image_install() {
   $url = Url::fromRoute('filter.admin_overview');
-  drupal_set_message(t('Editor Advanced Image is available for configuration under <a href="@administer-page">Administration > Configuration > Content authoring > Text formats and editors</a>', ['@administer-page' => $url->toString()]));
+
+  $messenger = \Drupal::messenger();
+  $messenger->addMessage(t('Editor Advanced Image is available for configuration under <a href="@administer-page">Administration > Configuration > Content authoring > Text formats and editors</a>', ['@administer-page' => $url->toString()]));
 }
 
 /**

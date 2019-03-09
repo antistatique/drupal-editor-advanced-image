@@ -52,26 +52,26 @@ class UiAdminTest extends UiTestBase {
     $full_html_format->save();
 
     // Create a user for tests.
-    $this->adminUser = $this->drupalCreateUser(['administer filters']);
+    $admin = $this->drupalCreateUser(['administer filters']);
+    $this->drupalLogin($admin);
   }
 
   /**
    * Tests the node add page is reachable.
    */
   public function testAdminFormatsManageReachable() {
-    $this->drupalLogin($this->adminUser);
     $this->drupalGet('admin/config/content/formats/manage/full_html');
-    $this->isSuccessful();
+
+    $this->assertSession()->elementExists('css', 'form.filter-format-edit-form');
   }
 
   /**
    * Tests a CKEditor editor and visibilit of Editor Advanced Image config.
    */
   public function testAdminForm() {
-    $this->drupalLogin($this->adminUser);
     $this->drupalGet('admin/config/content/formats/manage/full_html');
 
-    // Select the "CKEditor" editor and click the "Save configuration" button.
+    // Select the "CKEditor" editor.
     $this->fillField('Text editor', 'ckeditor');
 
     // Wait on CKEditor Ajax call to load plugins forms.
@@ -88,8 +88,28 @@ class UiAdminTest extends UiTestBase {
    * Tests a CKEditor editor & storage of default class field.
    */
   public function testDefaultClass() {
-    $this->testAdminForm();
+    $page = $this->getSession()->getPage();
+    $web_assert = $this->assertSession();
 
+    $this->drupalGet('admin/config/content/formats/manage/full_html');
+
+    // Select the "CKEditor" editor.
+    $this->fillField('Text editor', 'ckeditor');
+
+    // Wait on CKEditor Ajax call to load plugins forms.
+    $this->assertSession()->assertWaitOnAjaxRequest();
+
+    $this->assertElementPresent('.vertical-tabs__menu a[href^="#edit-editor-settings-plugins-editoradvancedimage--"]');
+
+    $web_assert->waitForElementVisible('css', '.vertical-tabs__menu a[href^="#edit-editor-settings-plugins-editoradvancedimage--"]', 50);
+
+    // Find & click on the Editor Advanced Plugin Form tab.
+    $page->find('css', '.vertical-tabs__menu a[href^="#edit-editor-settings-plugins-editoradvancedimage--"]')->click();
+
+    // Assert that the Editor Advanced Image Form becomes visible.
+    $web_assert->waitForElementVisible('css', '#edit-editor-settings-plugins-editoradvancedimage-default-class', 50);
+
+    // Change the default class for 'my-class'.
     $this->fillField('editor[settings][plugins][editoradvancedimage][default_class]', 'my-class');
 
     // Submit the new value.

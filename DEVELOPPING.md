@@ -28,7 +28,7 @@ on your environment:
 
 ## 🏆 Tests
 
-Editor Advanced Image use JavascriptTestBase to test
+Editor Advanced Image use WebDriverTestBase to test
 Javascript web-based behaviors and interactions.
 
 For tests you need a working database connection and for browser tests

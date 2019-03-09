@@ -74,7 +74,7 @@ function editor_advanced_image_form_editor_image_dialog_alter(&$form, FormStateI
     '#title'         => t('Title'),
     '#description'   => t('Populates the title attribute of the image, usually shown as a small tooltip on hover.'),
     '#default_value' => $get_default_value('title'),
-    '#maxlength'     => 512,
+    '#maxlength'     => 1024,
     '#weight'        => 1,
     '#access'        => $is_accessible('title'),
   ];
@@ -95,7 +95,7 @@ function editor_advanced_image_form_editor_image_dialog_alter(&$form, FormStateI
     '#title'         => t('CSS classes'),
     '#description'   => t('List of CSS classes to add to the image, separated by spaces.') . $default_class,
     '#default_value' => $get_default_value('class'),
-    '#maxlength'     => 512,
+    '#maxlength'     => 1024,
     '#access'        => $is_accessible('class'),
     '#group'         => 'advanced',
   ];
@@ -105,7 +105,7 @@ function editor_advanced_image_form_editor_image_dialog_alter(&$form, FormStateI
     '#title'         => t('ID'),
     '#description'   => t('Allows linking to this content using a <a href="https://en.wikipedia.org/wiki/Fragment_identifier">URL fragment</a>. Must be unique.'),
     '#default_value' => $get_default_value('id'),
-    '#maxlength'     => 512,
+    '#maxlength'     => 1024,
     '#access'        => $is_accessible('id'),
     '#group'         => 'advanced',
   ];

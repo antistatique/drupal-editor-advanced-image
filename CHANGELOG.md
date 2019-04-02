@@ -1,11 +1,14 @@
 CHANGELOG
 ---------
 
+## NEXT RELEASE
+ - close #3045122 - fix Drupal-CI Composer failure since Drupal 8.7.x+ - Update of drupal/coder squizlabs/php_codesniffer"
+
 ## 8.x-1.0-beta5 (2018-11-29)
  - fix #2987982 - Classes not saving on captioned images
  - fix #3010610 - Removes links on images
 
-## 8.x-1.0-beta4 (2018-02-21)
+## 8.x-1.0-beta4 (2018-02-21)
  - fix #2919949 - The originalUpcast trigger a false positif
  - fix #2930454 - Doesn't work with imce image button
  - fix #2943420 - A parsing error, in the code below, with title and id attributes, while editing content

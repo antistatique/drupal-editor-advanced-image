@@ -76,7 +76,7 @@ class EditorAdvancedImage extends PluginBase implements CKEditorPluginInterface,
     $settings = $editor->getSettings();
 
     $form['default_class'] = [
-      '#title'         => t('Default image class(es)'),
+      '#title'         => $this->t('Default image class(es)'),
       '#type'          => 'textfield',
       '#default_value' => !empty($settings['plugins']['editoradvancedimage']['default_class']) ? $settings['plugins']['editoradvancedimage']['default_class'] : '',
       '#description' => $this->t('A list of classes that will be added when the user adds an inline-image with CKEditor. <br>Enter one or more classes separated by spaces. Example: <code>img-responsive</code> or <code>img-fluid</code>.'),
@@ -100,13 +100,13 @@ class EditorAdvancedImage extends PluginBase implements CKEditorPluginInterface,
   /**
    * Check if a DrupalImage exists in the given toolbar row.
    *
-   * @param arra $toolbar
+   * @param array $toolbar
    *   A CKeditor toolbar row containing Ckeditor plugin items.
    *
    * @return bool
    *   Does the DrupalImage has been placed in the CKeditor.
    */
-  public function checkImageEnable($toolbar) {
+  public function checkImageEnable(array $toolbar) {
     foreach ($toolbar as $items) {
       foreach ($items['items'] as $item) {
         if ('DrupalImage' === $item) {

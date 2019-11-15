@@ -82,7 +82,7 @@
 
           // Apply attributes on <figure> when dealing with captioned images.
           var el = element
-          if (el.name == 'figure') {
+          if (el.name === 'figure') {
             el = el.children[0]
           }
 

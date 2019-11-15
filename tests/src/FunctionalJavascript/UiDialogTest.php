@@ -8,6 +8,7 @@ use Drupal\field\Entity\FieldConfig;
 use Drupal\field\Entity\FieldStorageConfig;
 use Drupal\filter\Entity\FilterFormat;
 use Drupal\node\Entity\NodeType;
+use Drupal\Tests\ckeditor\Traits\CKEditorTestTrait;
 
 /**
  * Tests event info pages and links.
@@ -16,6 +17,7 @@ use Drupal\node\Entity\NodeType;
  * @group editor_advanced_image_ui_dialog
  */
 class UiDialogTest extends UiTestBase {
+  use CKEditorTestTrait;
 
   /**
    * {@inheritdoc}
@@ -279,6 +281,44 @@ class UiDialogTest extends UiTestBase {
 
     $this->assertElementPresent('.ui-dialog .form-item-attributes-class');
     $this->assertSession()->elementContains('css', '.ui-dialog .form-item-attributes-class', 'Default: <code>test-default-class</code>');
+  }
+
+  /**
+   * Ensure the CKeditor still works when DrupalImage is not in Toolbar.
+   */
+  public function testWhenImageNotEnabled() {
+    // Add a default class in the settings.
+    $settings = [
+      'toolbar' => [
+        'rows' => [
+          [
+            [
+              'name' => 'All the things',
+              'items' => [
+                'Source',
+                'Bold',
+                'Italic',
+                'DrupalLink',
+                'DrupalUnlink',
+              ],
+            ],
+          ],
+        ],
+      ],
+      'plugins' => [],
+    ];
+    $this->editor->setSettings($settings);
+    $this->editor->save();
+
+    $this->drupalLogin($this->adminUser);
+    $this->drupalGet('node/add/page');
+
+    $this->waitForEditor();
+    $this->assignNameToCkeditorIframe();
+    $this->getSession()->switchToIFrame('ckeditor');
+
+    $assert_session = $this->assertSession();
+    $this->assertTrue($assert_session->waitForElementVisible('css', '.cke_editable', 1000));
   }
 
 }

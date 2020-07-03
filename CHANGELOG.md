@@ -3,6 +3,9 @@ CHANGELOG
 
 ## NEXT RELEASE
  - close #3045122 - fix Drupal-CI Composer failure since Drupal 8.7.x+ - Update of drupal/coder squizlabs/php_codesniffer"
+ - replace drupal_ti by wengerk/docker-drupal-for-contrib
+ - ensure compatibility with Drupal 8.8+
+ - ensure compatibility with Drupal 9
 
 ## 8.x-1.0-beta5 (2018-11-29)
  - fix #2987982 - Classes not saving on captioned images

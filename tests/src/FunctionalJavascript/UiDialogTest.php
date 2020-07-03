@@ -318,7 +318,7 @@ class UiDialogTest extends UiTestBase {
     $this->getSession()->switchToIFrame('ckeditor');
 
     $assert_session = $this->assertSession();
-    $this->assertTrue($assert_session->waitForElementVisible('css', '.cke_editable', 1000));
+    $this->assertNotEmpty($assert_session->waitForElementVisible('css', '.cke_editable', 1000));
   }
 
 }

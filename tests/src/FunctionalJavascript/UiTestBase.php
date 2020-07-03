@@ -11,6 +11,11 @@ use Behat\Mink\Exception\ElementNotFoundException;
 abstract class UiTestBase extends WebDriverTestBase {
 
   /**
+   * {@inheritdoc}
+   */
+  protected $defaultTheme = 'classy';
+
+  /**
    * Finds field (input, textarea, select) with specified locator.
    *
    * @param string $locator

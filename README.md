@@ -29,15 +29,22 @@ By using Editor Advanced Image, you will also be able to:
 
 ## Versions
 
-Editor Advanced Image is only available for Drupal 8 !
-The module is ready to be used in Drupal 8, there are no known issues.
+The version `8.x-1.x` is not compatible with Drupal `8.8.x`.
 
-This version should work with all Drupal 8 releases, and it is always
-recommended to keep Drupal core installations up to date.
+Drupal `8.8.x` brings some breaking change with tests and so you
+must upgrade to `8.x-2.x` version of **Editor Advanced Image**.
+
+## Which version should I use?
+
+|Drupal Core|EAI         |
+|:---------:|:----------:|
+|8.7.x      |1.x         |
+|8.8.x      |2.x         |
+|9.x        |2.x         |
 
 ## Dependencies
 
-The Drupal 8 version of Editor Advanced Image requires nothing !
+The Drupal 8 & Drupal 9 version of Editor Advanced Image requires nothing !
 Feel free to use it.
 
 ## Supporting organizations

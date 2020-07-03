@@ -15,7 +15,7 @@ Drupal repo
 
 Github repo
   ```
-  git remote add github https://github.com/antistatique/drupal-editor-advanced-image.git
+  git remote add github git@github.com:antistatique/drupal-editor-advanced-image.git
   ```
 
 ## 🔧 Prerequisites

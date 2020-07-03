@@ -1,7 +1,7 @@
 CHANGELOG
 ---------
 
-## NEXT RELEASE
+## 8.x-2.0-beta1 (2020-07-03)
  - close #3045122 - fix Drupal-CI Composer failure since Drupal 8.7.x+ - Update of drupal/coder squizlabs/php_codesniffer"
  - replace drupal_ti by wengerk/docker-drupal-for-contrib
  - ensure compatibility with Drupal 8.8+

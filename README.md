@@ -36,7 +36,7 @@ must upgrade to `8.x-2.x` version of **Editor Advanced Image**.
 
 ## Which version should I use?
 
-|Drupal Core|NBSP        |
+|Drupal Core|EAI         |
 |:---------:|:----------:|
 |8.7.x      |1.x         |
 |8.8.x      |2.x         |

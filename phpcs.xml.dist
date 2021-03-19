@@ -10,6 +10,7 @@
 
   <exclude-pattern>*\.(md|info\.yml)$</exclude-pattern>>
   <exclude-pattern>*/vendor/*</exclude-pattern>>
+  <exclude-pattern>*/node_modules/*</exclude-pattern>>
 
   <rule ref="./vendor/drupal/coder/coder_sniffer/Drupal"/>
   <rule ref="./vendor/drupal/coder/coder_sniffer/DrupalPractice"/>

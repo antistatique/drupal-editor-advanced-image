@@ -106,7 +106,7 @@ Detect overcomplicated expressions & Unused parameters, methods, properties.
 
   ```
   $ docker-compose exec drupal phpmd ./web/modules/contrib/editor_advanced_image/ text ./phpmd.xml \
-  --suffixes php,module,inc,install,test,profile,theme,css,info,txt --exclude *Test.php,*vendor/*
+  --suffixes php,module,inc,install,test,profile,theme,css,info,txt --exclude *Test.php,*vendor/*,*node_modules/*
   ```
 
 #### Running PHP Copy/Paste Detector
@@ -116,7 +116,7 @@ https://github.com/sebastianbergmann/phpcpd
 `phpcpd` is a Copy/Paste Detector (CPD) for PHP code.
 
   ```
-  $ docker-compose exec drupal phpcpd ./web/modules/contrib/editor_advanced_image/src --suffix .php --suffix .module --suffix .inc --suffix .install --suffix .test --suffix .profile --suffix .theme --suffix .css --suffix .info --suffix .txt --exclude *.md --exclude *.info.yml --exclude tests --exclude vendor/
+  $ docker-compose exec drupal phpcpd ./web/modules/contrib/editor_advanced_image/src --suffix .php --suffix .module --suffix .inc --suffix .install --suffix .test --suffix .profile --suffix .theme --suffix .css --suffix .info --suffix .txt --exclude *.md --exclude *.info.yml --exclude tests --exclude vendor/  --exclude node_modules/
   ```
 
 #### Running PhpDeprecationDetector
@@ -127,7 +127,7 @@ A scanner that checks compatibility of your code with PHP interpreter versions.
 
   ```
   $ docker-compose exec drupal phpdd ./web/modules/contrib/editor_advanced_image/ \
-    --file-extensions php,module,inc,install,test,profile,theme,info --exclude vendor
+    --file-extensions php,module,inc,install,test,profile,theme,info --exclude vendor --exclude node_modules
   ```
 
 ### Enforce code standards with git hooks

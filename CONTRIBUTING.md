@@ -53,8 +53,12 @@ Run testing by stopping at first failure using the following command:
 
 You need to run `yarn` before using ESLint. Then run the commmand:
 
-  ```bash
-  ./node_modules/.bin/eslint ./
+  ```
+  // Run Prettier
+  yarn run prettier
+
+  // Run ESLint - Passing ruleset with more problematic rules turned off.
+  yarn run lint:core-js-passing
   ```
 
 ## 🚔 Check Drupal coding standards & Drupal best practices

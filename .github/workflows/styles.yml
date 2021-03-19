@@ -10,7 +10,17 @@ jobs:
       - name: Install modules
         run: yarn
       - name: Run ESLint
-        run: ./node_modules/.bin/eslint ./ --ext .js,.jsx,.ts,.tsx
+        run: yarn run lint:core-js-passing
+
+  prettier:
+    name: prettier
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install modules
+        run: yarn
+      - name: Run ESLint
+        run: yarn run prettier-check
 
   phpcs:
     name: phpcs

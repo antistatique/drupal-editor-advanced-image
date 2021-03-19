@@ -15,6 +15,7 @@ use Drupal\Tests\ckeditor\Traits\CKEditorTestTrait;
  *
  * @group editor_advanced_image
  * @group editor_advanced_image_ui_dialog
+ * @group editor_advanced_image_functional
  */
 class UiDialogTest extends UiTestBase {
   use CKEditorTestTrait;

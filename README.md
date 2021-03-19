@@ -2,6 +2,10 @@
 
 Enhances the inline-image Dialog in D8 CKEditor.
 
+|       Travis-CI        |        Downloads        |         Releases         |
+|:----------------------:|:-----------------------:|:------------------------:|
+| [![Build Status](https://github.com/antistatique/drupal-editor-advanced-image/actions/workflows/ci.yml/badge.svg)](https://github.com/antistatique/drupal-editor-advanced-image/actions/workflows/ci.yml) | [![Code styles](https://github.com/antistatique/drupal-editor-advanced-image/actions/workflows/styles.yml/badge.svg)](https://github.com/antistatique/drupal-editor-advanced-image/actions/workflows/styles.yml) | [![Latest Stable Version](https://img.shields.io/badge/release-v2.0-blue.svg?style=flat-square)](https://www.drupal.org/project/editor_advanced_image/releases) |
+
 ## Features
 
 Allows to define the following attributes:

@@ -1,8 +1,19 @@
 {
+  "scripts": {
+    "lint:core-js": "node ./node_modules/eslint/bin/eslint.js .",
+    "lint:core-js-passing": "node ./node_modules/eslint/bin/eslint.js --quiet --config=.eslintrc.passing.json .",
+    "lint:core-js-stats": "node ./node_modules/eslint/bin/eslint.js --format=./scripts/js/eslint-stats-by-type.js .",
+    "prettier": "prettier --write \"./**/*.es6.js\" \"./**/*.js\" \"./tests/Drupal/Nightwatch/**/*.js\"",
+    "prettier-check": "prettier --check \"./**/*.es6.js\" \"./**/*.js\" \"./tests/Drupal/Nightwatch/**/*.js\""
+  },
   "devDependencies": {
-    "eslint": "^4.18.2",
-    "eslint-config-standard": "^7.0.1",
-    "eslint-plugin-promise": "^3.5.0",
-    "eslint-plugin-standard": "^2.1.1"
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-prettier": "^2.6.2",
+    "eslint-plugin-react": "^7.10.0",
+    "prettier": "^1.15.2"
   }
 }

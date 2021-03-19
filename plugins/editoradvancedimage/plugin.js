@@ -12,94 +12,106 @@
 
 /* global CKEDITOR */
 
-(function (CKEDITOR) {
-  'use strict'
+(function(CKEDITOR) {
+  "use strict";
 
-  CKEDITOR.plugins.add('editoradvancedimage', {
-    requires: 'drupalimage',
+  CKEDITOR.plugins.add("editoradvancedimage", {
+    requires: "drupalimage",
 
-    beforeInit: function (editor) {
+    beforeInit: function(editor) {
       // Add CSS file.
-      editor.addContentsCss(this.path + 'css/ckeditor.editoradvancedimage.css')
+      editor.addContentsCss(this.path + "css/ckeditor.editoradvancedimage.css");
 
       // Retrieve config from Drupal\editor_advanced_image\Plugin\CKEditorPlugin::getConfig.
-      var defaultClasses = editor.config.defaultClasses ? editor.config.defaultClasses.trim() : ''
+      var defaultClasses = editor.config.defaultClasses
+        ? editor.config.defaultClasses.trim()
+        : "";
 
       // Override the image2 widget definition to handle the additional
       // title, class and id attributes.
-      editor.on('widgetDefinition', function (event) {
-        var widgetDefinition = event.data
-        if (widgetDefinition.name !== 'image') {
-          return
-        }
-
-        // Protected; keys of the widget data to be sent to the Drupal dialog.
-        // Append to the values defined by the drupalimage plugin.
-        // @see core/modules/ckeditor/js/plugins/drupalimage/plugin.js
-        CKEDITOR.tools.extend(widgetDefinition._mapDataToDialog, {
-          'title': 'title',
-          'class': 'class',
-          'id': 'id'
-        })
-
-        // Override downcast(): since we only accept <img> in our upcast method,
-        // the element is already correct. We only need to update the element's
-        // title attribute.
-        var originalDowncast = widgetDefinition.downcast
-        widgetDefinition.downcast = function (element) {
-          if (element.name !== 'img') {
-            return
+      editor.on(
+        "widgetDefinition",
+        function(event) {
+          var widgetDefinition = event.data;
+          if (widgetDefinition.name !== "image") {
+            return;
           }
 
-          var img = findElementByName(element, 'img')
-          originalDowncast.call(this, img)
+          // Protected; keys of the widget data to be sent to the Drupal dialog.
+          // Append to the values defined by the drupalimage plugin.
+          // @see core/modules/ckeditor/js/plugins/drupalimage/plugin.js
+          CKEDITOR.tools.extend(widgetDefinition._mapDataToDialog, {
+            title: "title",
+            class: "class",
+            id: "id"
+          });
 
-          img.attributes['title'] = this.data['title']
-          img.attributes['class'] = this.data['class'] ? this.data['class'].trim() : defaultClasses
-          img.attributes['id'] = this.data['id']
+          // Override downcast(): since we only accept <img> in our upcast method,
+          // the element is already correct. We only need to update the element's
+          // title attribute.
+          var originalDowncast = widgetDefinition.downcast;
+          widgetDefinition.downcast = function(element) {
+            if (element.name !== "img") {
+              return;
+            }
 
-          return img
-        }
+            var img = findElementByName(element, "img");
+            originalDowncast.call(this, img);
 
-        // We want to upcast <img> elements to a DOM structure required by the
-        // image2 widget; we only accept an <img> tag, and that <img> tag MAY
-        // have a data-entity-type and a data-entity-uuid attribute.
-        var originalUpcast = widgetDefinition.upcast
-        widgetDefinition.upcast = function (element, data) {
-          if (element.name !== 'img') {
-            return
-          // Don't initialize on pasted fake objects.
-          } else if (element.attributes['data-cke-realelement']) {
-            return
-          }
+            img.attributes["title"] = this.data["title"];
+            img.attributes["class"] = this.data["class"]
+              ? this.data["class"].trim()
+              : defaultClasses;
+            img.attributes["id"] = this.data["id"];
 
-          element = originalUpcast.call(this, element, data)
+            return img;
+          };
 
-          // Check the originalUpcast detect an <img> element.
-          if (typeof element === 'undefined') {
-            return
-          }
+          // We want to upcast <img> elements to a DOM structure required by the
+          // image2 widget; we only accept an <img> tag, and that <img> tag MAY
+          // have a data-entity-type and a data-entity-uuid attribute.
+          var originalUpcast = widgetDefinition.upcast;
+          widgetDefinition.upcast = function(element, data) {
+            if (element.name !== "img") {
+              return;
+              // Don't initialize on pasted fake objects.
+            } else if (element.attributes["data-cke-realelement"]) {
+              return;
+            }
 
-          // Apply attributes on <figure> when dealing with captioned images.
-          var el = element
-          if (el.name === 'figure') {
-            el = el.children[0]
-          }
+            element = originalUpcast.call(this, element, data);
 
-          // Parse the title attribute.
-          data['title'] = el.attributes['title']
-          // Parse the class attribute & remove default class from it.
-          data['class'] = el.attributes['class'] ? el.attributes['class'].trim() : defaultClasses
-          // Parse the id attribute.
-          data['id'] = el.attributes['id']
+            // Check the originalUpcast detect an <img> element.
+            if (typeof element === "undefined") {
+              return;
+            }
 
-          return element
-        }
+            // Apply attributes on <figure> when dealing with captioned images.
+            var el = element;
+            if (el.name === "figure") {
+              el = el.children[0];
+            }
 
-        // Low priority to ensure drupalimage's event handler runs first.
-      }, null, null, 20)
+            // Parse the title attribute.
+            data["title"] = el.attributes["title"];
+            // Parse the class attribute & remove default class from it.
+            data["class"] = el.attributes["class"]
+              ? el.attributes["class"].trim()
+              : defaultClasses;
+            // Parse the id attribute.
+            data["id"] = el.attributes["id"];
+
+            return element;
+          };
+
+          // Low priority to ensure drupalimage's event handler runs first.
+        },
+        null,
+        null,
+        20
+      );
     }
-  })
+  });
 
   /**
    * Finds an element by its name.
@@ -115,19 +127,19 @@
    * @return {?CKEDITOR.htmlParser.element}
    *   The found element, or null.
    */
-  function findElementByName (element, name) {
+  function findElementByName(element, name) {
     if (element.name === name) {
-      return element
+      return element;
     }
 
-    var found = null
-    element.forEach(function (el) {
+    var found = null;
+    element.forEach(function(el) {
       if (el.name === name) {
-        found = el
+        found = el;
         // Stop here.
-        return false
+        return false;
       }
-    }, CKEDITOR.NODE_ELEMENT)
-    return found
+    }, CKEDITOR.NODE_ELEMENT);
+    return found;
   }
-})(CKEDITOR)
+})(CKEDITOR);

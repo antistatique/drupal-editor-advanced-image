@@ -9,6 +9,7 @@ use Drupal\filter\Entity\FilterFormat;
  *
  * @group editor_advanced_image
  * @group editor_advanced_image_ui_admin
+ * @group editor_advanced_image_functional
  */
 class UiAdminTest extends UiTestBase {
 

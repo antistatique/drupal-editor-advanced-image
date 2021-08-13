@@ -23,7 +23,7 @@ class UiDialogTest extends UiTestBase {
   /**
    * {@inheritdoc}
    */
-  public static $modules = [
+  protected static $modules = [
     'filter',
     'editor',
     'ckeditor',
@@ -61,7 +61,7 @@ class UiDialogTest extends UiTestBase {
   /**
    * {@inheritdoc}
    */
-  protected function setUp() {
+  protected function setUp(): void {
     parent::setUp();
 
     // Create text format.
@@ -138,13 +138,13 @@ class UiDialogTest extends UiTestBase {
     $this->drupalGet('node/add/page');
 
     // Asserts the Image button is present.
-    $this->assertElementPresent('#cke_edit-body-0-value .cke_button__drupalimage');
+    $this->assertSession()->elementExists('css', '#cke_edit-body-0-value .cke_button__drupalimage');
 
     // Asserts the Image button is present.
     $this->clickOnElement('css', '.cke_button__drupalimage');
     $this->assertSession()->assertWaitOnAjaxRequest();
 
-    $this->assertElementPresent('.ui-dialog');
+    $this->assertSession()->elementExists('css', '.ui-dialog');
     $this->assertSession()->elementContains('css', '.ui-dialog .ui-dialog-titlebar', 'Insert Image');
   }
 
@@ -160,9 +160,9 @@ class UiDialogTest extends UiTestBase {
 
     $this->testImageBaseDialogWorks();
 
-    $this->assertElementPresent('.ui-dialog .form-item-attributes-title');
-    $this->assertElementPresent('.ui-dialog .form-item-attributes-class');
-    $this->assertElementPresent('.ui-dialog .form-item-attributes-id');
+    $this->assertSession()->elementExists('css', '.ui-dialog .form-item-attributes-title');
+    $this->assertSession()->elementExists('css', '.ui-dialog .form-item-attributes-class');
+    $this->assertSession()->elementExists('css', '.ui-dialog .form-item-attributes-id');
   }
 
   /**
@@ -180,9 +180,9 @@ class UiDialogTest extends UiTestBase {
 
     $this->testImageBaseDialogWorks();
 
-    $this->assertElementNotPresent('.ui-dialog .form-item-attributes-title');
-    $this->assertElementNotPresent('.ui-dialog .form-item-attributes-class');
-    $this->assertElementNotPresent('.ui-dialog .form-item-attributes-id');
+    $this->assertSession()->elementNotExists('css', '.ui-dialog .form-item-attributes-title');
+    $this->assertSession()->elementNotExists('css', '.ui-dialog .form-item-attributes-class');
+    $this->assertSession()->elementNotExists('css', '.ui-dialog .form-item-attributes-id');
 
     // Enable the filter_html filter: only a title img attributes.
     $this->editorFilterFormat->setFilterConfig('filter_html', [
@@ -195,9 +195,9 @@ class UiDialogTest extends UiTestBase {
 
     $this->testImageBaseDialogWorks();
 
-    $this->assertElementPresent('.ui-dialog .form-item-attributes-title');
-    $this->assertElementNotPresent('.ui-dialog .form-item-attributes-class');
-    $this->assertElementNotPresent('.ui-dialog .form-item-attributes-id');
+    $this->assertSession()->elementExists('css', '.ui-dialog .form-item-attributes-title');
+    $this->assertSession()->elementNotExists('css', '.ui-dialog .form-item-attributes-class');
+    $this->assertSession()->elementNotExists('css', '.ui-dialog .form-item-attributes-id');
 
     // Enable the filter_html filter: only a class img attributes.
     $this->editorFilterFormat->setFilterConfig('filter_html', [
@@ -210,9 +210,9 @@ class UiDialogTest extends UiTestBase {
 
     $this->testImageBaseDialogWorks();
 
-    $this->assertElementNotPresent('.ui-dialog .form-item-attributes-title');
-    $this->assertElementPresent('.ui-dialog .form-item-attributes-class');
-    $this->assertElementNotPresent('.ui-dialog .form-item-attributes-id');
+    $this->assertSession()->elementNotExists('css', '.ui-dialog .form-item-attributes-title');
+    $this->assertSession()->elementExists('css', '.ui-dialog .form-item-attributes-class');
+    $this->assertSession()->elementNotExists('css', '.ui-dialog .form-item-attributes-id');
 
     // Enable the filter_html filter: only a id img attributes.
     $this->editorFilterFormat->setFilterConfig('filter_html', [
@@ -225,9 +225,9 @@ class UiDialogTest extends UiTestBase {
 
     $this->testImageBaseDialogWorks();
 
-    $this->assertElementNotPresent('.ui-dialog .form-item-attributes-title');
-    $this->assertElementNotPresent('.ui-dialog .form-item-attributes-class');
-    $this->assertElementPresent('.ui-dialog .form-item-attributes-id');
+    $this->assertSession()->elementNotExists('css', '.ui-dialog .form-item-attributes-title');
+    $this->assertSession()->elementNotExists('css', '.ui-dialog .form-item-attributes-class');
+    $this->assertSession()->elementExists('css', '.ui-dialog .form-item-attributes-id');
 
     // Enable the filter_html filter: only a id, class, title img attributes.
     $this->editorFilterFormat->setFilterConfig('filter_html', [
@@ -240,9 +240,9 @@ class UiDialogTest extends UiTestBase {
 
     $this->testImageBaseDialogWorks();
 
-    $this->assertElementPresent('.ui-dialog .form-item-attributes-title');
-    $this->assertElementPresent('.ui-dialog .form-item-attributes-class');
-    $this->assertElementPresent('.ui-dialog .form-item-attributes-id');
+    $this->assertSession()->elementExists('css', '.ui-dialog .form-item-attributes-title');
+    $this->assertSession()->elementExists('css', '.ui-dialog .form-item-attributes-class');
+    $this->assertSession()->elementExists('css', '.ui-dialog .form-item-attributes-id');
   }
 
   /**
@@ -280,7 +280,7 @@ class UiDialogTest extends UiTestBase {
 
     $this->testImageBaseDialogWorks();
 
-    $this->assertElementPresent('.ui-dialog .form-item-attributes-class');
+    $this->assertSession()->elementExists('css', '.ui-dialog .form-item-attributes-class');
     $this->assertSession()->elementContains('css', '.ui-dialog .form-item-attributes-class', 'Default: <code>test-default-class</code>');
   }
 

@@ -16,7 +16,7 @@ class UiAdminTest extends UiTestBase {
   /**
    * {@inheritdoc}
    */
-  public static $modules = [
+  protected static $modules = [
     'filter',
     'editor',
     'ckeditor',
@@ -40,7 +40,7 @@ class UiAdminTest extends UiTestBase {
   /**
    * {@inheritdoc}
    */
-  protected function setUp() {
+  protected function setUp(): void {
     parent::setUp();
 
     // Create text format.
@@ -79,10 +79,10 @@ class UiAdminTest extends UiTestBase {
     $this->assertSession()->assertWaitOnAjaxRequest();
 
     // Check the Editor Advanced Image tab is visible.
-    $this->assertElementPresent('.vertical-tabs');
+    $this->assertSession()->elementExists('css', '.vertical-tabs');
 
     // Ensure the default class is initialized to the expected default value.
-    $this->assertFieldByName('editor[settings][plugins][editoradvancedimage][default_class]', '');
+    $this->assertSession()->fieldValueEquals('editor[settings][plugins][editoradvancedimage][default_class]', '');
   }
 
   /**
@@ -100,7 +100,7 @@ class UiAdminTest extends UiTestBase {
     // Wait on CKEditor Ajax call to load plugins forms.
     $this->assertSession()->assertWaitOnAjaxRequest();
 
-    $this->assertElementPresent('.vertical-tabs__menu a[href^="#edit-editor-settings-plugins-editoradvancedimage--"]');
+    $this->assertSession()->elementExists('css', '.vertical-tabs__menu a[href^="#edit-editor-settings-plugins-editoradvancedimage--"]');
 
     $web_assert->waitForElementVisible('css', '.vertical-tabs__menu a[href^="#edit-editor-settings-plugins-editoradvancedimage--"]', 50);
 
@@ -120,7 +120,7 @@ class UiAdminTest extends UiTestBase {
     $this->drupalGet('admin/config/content/formats/manage/full_html');
 
     // Ensure the previously filled data has been stored.
-    $this->assertFieldByName('editor[settings][plugins][editoradvancedimage][default_class]', 'my-class');
+    $this->assertSession()->fieldValueEquals('editor[settings][plugins][editoradvancedimage][default_class]', 'my-class');
   }
 
 }

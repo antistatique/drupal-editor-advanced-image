@@ -51,9 +51,6 @@
           // title attribute.
           var originalDowncast = widgetDefinition.downcast;
           widgetDefinition.downcast = function(element) {
-            if (element.name !== "img") {
-              return;
-            }
 
             var img = findElementByName(element, "img");
             originalDowncast.call(this, img);

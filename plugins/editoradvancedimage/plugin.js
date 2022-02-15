@@ -61,6 +61,10 @@
               : defaultClasses;
             img.attributes["id"] = this.data["id"];
 
+            if (img.parent) {
+              return img.parent;
+            }
+
             return img;
           };
 

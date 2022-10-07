@@ -21,12 +21,12 @@ jobs:
             experimental: true
 
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v3
       - run: docker-compose -f docker-compose.yml pull --include-deps drupal
       - name: Build the docker-compose stack
         run: docker-compose -f docker-compose.yml build --pull --build-arg BASE_IMAGE_TAG=${{ matrix.drupal_version }} drupal
         continue-on-error: ${{ matrix.experimental }}
-      - name: Up a persistant Docker Container
+      - name: Up a persistent Docker Container
         run: docker-compose -f docker-compose.yml up -d drupal chrome
       - name: wait on Docker to be ready, especially Apache that takes many seconds to be up
         run: docker-compose exec -T drupal wait-for-it drupal:80 -t 60

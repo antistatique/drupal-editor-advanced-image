@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - move changelog format in order to use Keep a Changelog standard
 - force functional tests to fail on risky (skipped) tests
+- disable deprecation notice PHPUnit
 
 ### Added
 - add dependabot for Github Action dependency
@@ -16,6 +17,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Removed
 - remove satackey/action-docker-layer-caching on Github Actions
 - remove trigger github actions on every pull-request, keep only push
+
+### Fixed
+- fixed docker test Javascript on CI
 
 ## [2.0.0-beta1] - 2020-07-03
 ### Fixed

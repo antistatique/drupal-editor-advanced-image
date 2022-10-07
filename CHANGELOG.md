@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - add dependabot for Github Action dependency
 - add upgrade-status check
 
+### Removed
+- remove satackey/action-docker-layer-caching on Github Actions
+
 ## [2.0.0-beta1] - 2020-07-03
 ### Fixed
 - close #3045122 - fix Drupal-CI Composer failure since Drupal 8.7.x+ - Update of drupal/coder squizlabs/php_codesniffer"

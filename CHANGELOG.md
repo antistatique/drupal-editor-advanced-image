@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Changed
 - move changelog format in order to use Keep a Changelog standard
+- force functional tests to fail on risky (skipped) tests
 
 ### Added
 - add dependabot for Github Action dependency

@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - move changelog format in order to use Keep a Changelog standard
 - force functional tests to fail on risky (skipped) tests
 - disable deprecation notice PHPUnit
+- drop support of drupal 8.8 & 8.9
 
 ### Added
 - add dependabot for Github Action dependency

@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 - remove satackey/action-docker-layer-caching on Github Actions
+- remove trigger github actions on every pull-request, keep only push
 
 ## [2.0.0-beta1] - 2020-07-03
 ### Fixed

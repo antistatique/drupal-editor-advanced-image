@@ -51,10 +51,6 @@
           // title attribute.
           var originalDowncast = widgetDefinition.downcast;
           widgetDefinition.downcast = function(element) {
-            if (element.name !== "img") {
-              return;
-            }
-
             var img = findElementByName(element, "img");
             originalDowncast.call(this, img);
 
@@ -63,6 +59,30 @@
               ? this.data["class"].trim()
               : defaultClasses;
             img.attributes["id"] = this.data["id"];
+
+            var captionFilterEnabled =
+              editor.config.drupalImageCaption_captionFilterEnabled;
+            var alignFilterEnabled =
+              editor.config.drupalImageCaption_alignFilterEnabled;
+
+            var caption = this.editables.caption;
+            var captionHtml = caption && caption.getData();
+            var attrs = img.attributes;
+
+            if (captionFilterEnabled) {
+              if (captionHtml) {
+                attrs["data-caption"] = captionHtml;
+              }
+            }
+            if (alignFilterEnabled) {
+              if (this.data.align !== "none") {
+                attrs["data-align"] = this.data.align;
+              }
+            }
+
+            if (img.parent.name === "a") {
+              return img.parent;
+            }
 
             return img;
           };

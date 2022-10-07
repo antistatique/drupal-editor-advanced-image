@@ -22,6 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 - fixed docker test Javascript on CI
+- fix issue #3257427: When adding an image with align filter selected it doesn't works properly
 
 ## [2.0.0-beta1] - 2020-07-03
 ### Fixed

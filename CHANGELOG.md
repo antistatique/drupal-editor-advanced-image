@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - add dependabot for Github Action dependency
 - add upgrade-status check
+- add coverage for Drupal 9.3, 9.4 & 9.5
 
 ## [2.0.0-beta1] - 2020-07-03
 ### Fixed

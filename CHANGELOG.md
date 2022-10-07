@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Changed
 - move changelog format in order to use Keep a Changelog standard
+- drop support of drupal 8.8 & 8.9
 
 ### Added
 - add dependabot for Github Action dependency

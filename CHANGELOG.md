@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [2.0.0] - 2022-10-21
 ### Changed
 - move changelog format in order to use Keep a Changelog standard
 - force functional tests to fail on risky (skipped) tests
@@ -46,7 +48,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - First draft.
 
-[Unreleased]: https://github.com/antistatique/drupal-editor-advanced-image/compare/8.x-2.0-beta1...HEAD
+[Unreleased]: https://github.com/antistatique/drupal-editor-advanced-image/compare/8.x-2.0...HEAD
+[2.0.0]: https://github.com/antistatique/drupal-editor-advanced-image/compare/8.x-2.0-beta1...8.x-2.0
 [2.0.0-beta1]: https://github.com/antistatique/drupal-editor-advanced-image/compare/8.x-1.0-beta5...8.x-2.0-beta1
 [1.0.0-beta5]: https://github.com/antistatique/drupal-editor-advanced-image/compare/8.x-1.0-beta4...8.x-1.0-beta5
 [1.0.0-beta4]: https://github.com/antistatique/drupal-editor-advanced-image/compare/8.x-1.0-beta1...8.x-1.0-beta4

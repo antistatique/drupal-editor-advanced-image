@@ -42,11 +42,12 @@ The version `8.x-3.x` is not compatible with Drupal `8.x` and will only support 
 
 ## Which version should I use?
 
-|Drupal Core|    EAI    |
-|:---------:|:---------:|
-|8.7.x      |    1.x    |
-|8.8.x      |    2.x    |
-|9.x        | 2.x - 3.x |
+| Drupal Core |     EAI     |
+|:-----------:|:-----------:|
+|    8.7.x    |     1.x     |
+|    8.8.x    | 2.0.0-beta1 |
+|    8.9.x    | 2.0.0-beta1 |
+|     9.x     |    2.x      |
 
 ## Dependencies
 

@@ -31,15 +31,6 @@ By using Editor Advanced Image, you will also be able to:
     the "allowed HTML tags" field.
     (only those whitelisted will show up in the dialog).
 
-## Versions
-
-The version `8.x-1.x` is not compatible with Drupal `8.8.x`.
-
-Drupal `8.8.x` brings some breaking change with tests and so you
-must upgrade to `8.x-2.x` version of **Editor Advanced Image**.
-
-The version `8.x-3.x` is not compatible with Drupal `8.x` and will only support Drupal `9.x` Drupal `10.x`.
-
 ## Which version should I use?
 
 | Drupal Core |     EAI     |
@@ -47,7 +38,8 @@ The version `8.x-3.x` is not compatible with Drupal `8.x` and will only support 
 |    8.7.x    |     1.x     |
 |    8.8.x    | 2.0.0-beta1 |
 |    8.9.x    | 2.0.0-beta1 |
-|     9.x     |    2.x      |
+|     9.x     |     2.x     |
+|     9.3     |    2.0.1    |
 
 ## Dependencies
 

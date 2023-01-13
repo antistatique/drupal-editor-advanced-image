@@ -8,9 +8,12 @@ use Drupal\ckeditor\CKEditorPluginInterface;
 use Drupal\ckeditor\CKEditorPluginContextualInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\ckeditor\CKEditorPluginConfigurableInterface;
+use Drupal\Core\Extension\ModuleExtensionList;
+use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 
 /**
- * Defines the "editoradvancedimage" plugin.
+ * CKEditor 4 Editor Advanced Image plugin.
  *
  * @CKEditorPlugin(
  *   id = "editoradvancedimage",
@@ -18,7 +21,43 @@ use Drupal\ckeditor\CKEditorPluginConfigurableInterface;
  *   module = "ckeditor"
  * )
  */
-class EditorAdvancedImage extends PluginBase implements CKEditorPluginInterface, CKEditorPluginContextualInterface, CKEditorPluginConfigurableInterface {
+class EditorAdvancedImage extends PluginBase implements ContainerFactoryPluginInterface, CKEditorPluginInterface, CKEditorPluginContextualInterface, CKEditorPluginConfigurableInterface {
+
+  /**
+   * The module extension list.
+   *
+   * @var \Drupal\Core\Extension\ModuleExtensionList
+   */
+  protected ModuleExtensionList $moduleExtensionList;
+
+  /**
+   * Constructs a new Editor Advanced Image plugin object.
+   *
+   * @param array $configuration
+   *   A configuration array containing information about the plugin instance.
+   * @param string $plugin_id
+   *   The plugin_id for the plugin instance.
+   * @param array $plugin_definition
+   *   The plugin implementation definition.
+   * @param \Drupal\Core\Extension\ModuleExtensionList $extensionListModule
+   *   The module extension list.
+   */
+  public function __construct(array $configuration, $plugin_id, array $plugin_definition, ModuleExtensionList $extensionListModule) {
+    parent::__construct($configuration, $plugin_id, $plugin_definition);
+    $this->moduleExtensionList = $extensionListModule;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container, array $configuration, $plugin_id, $plugin_definition) {
+    return new static(
+      $configuration,
+      $plugin_id,
+      $plugin_definition,
+      $container->get('extension.list.module')
+    );
+  }
 
   /**
    * {@inheritdoc}
@@ -47,7 +86,7 @@ class EditorAdvancedImage extends PluginBase implements CKEditorPluginInterface,
    * {@inheritdoc}
    */
   public function getFile() {
-    return drupal_get_path('module', 'editor_advanced_image') . '/plugins/' . $this->getPluginId() . '/plugin.js';
+    return $this->moduleExtensionList->getPath('editor_advanced_image') . '/js/editor_advanced_image.js';
   }
 
   /**

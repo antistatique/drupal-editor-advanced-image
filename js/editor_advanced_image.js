@@ -7,7 +7,7 @@
  * - allow for the title, class & id attributes to be set
  * - mimic the upcasting behavior of the caption_filter filter.
  *
- * @ignore
+ * This is the CKEditor 4 version of the plugin.
  */
 
 /* global CKEDITOR */

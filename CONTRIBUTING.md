@@ -24,7 +24,7 @@ First of all, you need to have the following tools installed globally
 on your environment:
 
   * drush
-  * Latest dev release of Drupal 8.x/9.x.
+  * Latest dev release of Drupal 8.x/9.x/10.x.
   * docker
   * docker-compose
 
@@ -41,6 +41,15 @@ Once run, you will be able to access to your fresh installed Drupal on `localhos
     docker-compose exec drupal drush user:password admin admin
     docker-compose exec drupal drush en editor_advanced_image
 
+## 🚔 Build Javascript
+
+You need to run `yarn` before using Webpack. Then run the command:
+
+  ```
+  // Build Plugin CKEditor 5 assets.
+  yarn build
+  ```
+
 ## 🏆 Tests
 
 We use the [Docker for Drupal Contrib images](https://hub.docker.com/r/wengerk/drupal-for-contrib) to run testing on our project.
@@ -51,7 +60,7 @@ Run testing by stopping at first failure using the following command:
 
 ## 🚔 Check Javascript best practices
 
-You need to run `yarn` before using ESLint. Then run the commmand:
+You need to run `yarn` before using ESLint. Then run the command:
 
   ```
   // Run Prettier

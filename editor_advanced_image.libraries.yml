@@ -1,0 +1,22 @@
+editor_advanced_image:
+  version: VERSION
+  js:
+    js/editor_advanced_image.js: {}
+  dependencies:
+    - core/drupal
+    - core/drupal.announce
+    - core/jquery
+    - core/once
+
+ckeditor5:
+  version: VERSION
+  js:
+    js/build/editorAdvancedImage.js: { preprocess: false, minified: true }
+  css:
+    theme:
+      css/ckeditor.editoradvancedimage.css: {}
+  dependencies:
+    - core/drupal
+    - ckeditor5/ckeditor5
+    - ckeditor5/ckeditor5.image
+    - core/drupal.ckeditor5.image

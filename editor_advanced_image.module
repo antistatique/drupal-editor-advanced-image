@@ -11,6 +11,9 @@ use Drupal\editor\Entity\Editor;
 /**
  * Implements hook_form_FORM_ID_alter().
  *
+ * Alters the CKE4 image dialog form for text editor, to allow the user to
+ * type class,id and title attributes.
+ *
  * Add a title fields on EditorLinkDialog.
  * Add an advanced dropdown containing:
  *  - class field

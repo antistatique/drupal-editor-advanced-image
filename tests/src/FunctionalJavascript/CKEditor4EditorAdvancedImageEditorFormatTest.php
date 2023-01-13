@@ -5,13 +5,15 @@ namespace Drupal\Tests\editor_advanced_image\FunctionalJavascript;
 use Drupal\filter\Entity\FilterFormat;
 
 /**
- * Tests ckeditor formats admin forms.
+ * Tests the CKE4 editor_advanced_image editor formats forms.
  *
  * @group editor_advanced_image
- * @group editor_advanced_image_ui_admin
  * @group editor_advanced_image_functional
+ * @group editor_advanced_image_ckeditor4
+ *
+ * @requires module ckeditor
  */
-class UiAdminTest extends UiTestBase {
+class CKEditor4EditorAdvancedImageEditorFormatTest extends UiTestBase {
 
   /**
    * {@inheritdoc}
@@ -42,6 +44,10 @@ class UiAdminTest extends UiTestBase {
    */
   protected function setUp(): void {
     parent::setUp();
+
+    if (!in_array('ckeditor', $this->container->get('extension.list.module')->reset()->getList(), TRUE)) {
+      $this->markTestSkipped('CKEditor 4 module not available to install, skipping test.');
+    }
 
     // Create text format.
     $full_html_format = FilterFormat::create([

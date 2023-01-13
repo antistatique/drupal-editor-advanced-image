@@ -11,13 +11,15 @@ use Drupal\node\Entity\NodeType;
 use Drupal\Tests\ckeditor\Traits\CKEditorTestTrait;
 
 /**
- * Tests event info pages and links.
+ * Tests the CKE4 editor_advanced_image alterations on the durpalimage dialog.
  *
  * @group editor_advanced_image
- * @group editor_advanced_image_ui_dialog
  * @group editor_advanced_image_functional
+ * @group editor_advanced_image_ckeditor4
+ *
+ * @requires module ckeditor
  */
-class UiDialogTest extends UiTestBase {
+class CKEditor4EditorAdvancedImageDialogTest extends UiTestBase {
   use CKEditorTestTrait;
 
   /**
@@ -63,6 +65,10 @@ class UiDialogTest extends UiTestBase {
    */
   protected function setUp(): void {
     parent::setUp();
+
+    if (!in_array('ckeditor', $this->container->get('extension.list.module')->reset()->getList(), TRUE)) {
+      $this->markTestSkipped('CKEditor 4 module not available to install, skipping test.');
+    }
 
     // Create text format.
     $this->editorFilterFormat = FilterFormat::create([

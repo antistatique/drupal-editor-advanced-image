@@ -1,0 +1,30 @@
+# @TODO rename as ckeditor5_editorAdvancedImage
+editor_advanced_image_image:
+  ckeditor5:
+    plugins:
+      - editorAdvancedImage.EditorAdvancedImage
+    config:
+      # These are all options; this will be filtered based on configuration.
+      # @see \Drupal\editor_advanced_image\Plugin\CKEditor5Plugin\EditorAdvancedImage::getDynamicPluginConfig()
+      editorAdvancedImageOptions:
+        defaults:
+          class: ~
+        allowedAttributes:
+          - title
+          - class
+          - id
+
+      # Append the "Editor Advanced Image" button to the image balloon toolbar.
+      image:
+        toolbar:
+          - '|'
+          - editorAdvancedImageButton
+  drupal:
+    label: Editor Advanced Image
+    class: Drupal\editor_advanced_image\Plugin\CKEditor5Plugin\EditorAdvancedImage
+    library: editor_advanced_image/ckeditor5
+    elements:
+      - <img title class id>
+    conditions:
+      plugins:
+        - ckeditor5_image

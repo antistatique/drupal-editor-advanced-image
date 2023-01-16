@@ -13,7 +13,7 @@ abstract class UiTestBase extends WebDriverTestBase {
   /**
    * {@inheritdoc}
    */
-  protected $defaultTheme = 'classy';
+  protected $defaultTheme = 'starterkit_theme';
 
   /**
    * Finds field (input, textarea, select) with specified locator.

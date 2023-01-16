@@ -45,10 +45,6 @@ class CKEditor4EditorAdvancedImageEditorFormatTest extends UiTestBase {
   protected function setUp(): void {
     parent::setUp();
 
-    if (!in_array('ckeditor', $this->container->get('extension.list.module')->reset()->getList(), TRUE)) {
-      $this->markTestSkipped('CKEditor 4 module not available to install, skipping test.');
-    }
-
     // Create text format.
     $full_html_format = FilterFormat::create([
       'format'  => 'full_html',

@@ -29,7 +29,7 @@ jobs:
       - name: wait on Docker to be ready, especially MariaDB that takes many seconds to be up
         run: docker-compose exec -T drupal wait-for-it db:3306 -t 60
       - name: Run unit tests
-        run: docker-compose -f docker-compose.yml exec -T -u www-data drupal phpunit --no-coverage --group=${{ matrix.module }} --exclude-group=${{ matrix.module }}_functional --configuration=/var/www/html/phpunit.xml
+        run: docker-compose -f docker-compose.yml exec -T -u www-data drupal phpunit --testdox --no-coverage --group=${{ matrix.module }} --exclude-group=${{ matrix.module }}_functional --configuration=/var/www/html/phpunit.xml
         continue-on-error: ${{ matrix.experimental }}
 
   tests-functional:
@@ -61,7 +61,7 @@ jobs:
         run: docker-compose -f docker-compose.yml exec -T -u www-data drupal drush site-install standard --db-url="mysql://drupal:drupal@db/drupal" -y
         continue-on-error: ${{ matrix.experimental }}
       - name: Run tests
-        run: docker-compose -f docker-compose.yml exec -T -u www-data drupal phpunit --no-coverage --group=${{ matrix.module }}_functional --configuration=/var/www/html/phpunit.xml --fail-on-risky
+        run: docker-compose -f docker-compose.yml exec -T -u www-data drupal phpunit --testdox --no-coverage --group=${{ matrix.module }}_functional --configuration=/var/www/html/phpunit.xml --fail-on-risky
         continue-on-error: ${{ matrix.experimental }}
 
   upgrade-status:

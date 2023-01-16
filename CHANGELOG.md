@@ -6,11 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
+- add official support of drupal 10.0 (with CKEditor 4)
 - add support for CKEditor 5
 - upgrade path from CKEdditor 4 to CKEditor 5
 - add official support of drupal 9.5
 
 ### Removed
+- drop support of drupal below 9.3.x
 - drop support of drupal below 9.4.x
 
 ## [2.0.0] - 2022-10-21

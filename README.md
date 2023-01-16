@@ -48,7 +48,7 @@ The Drupal 10 version of Editor Advanced Image requires
 
 The Drupal 8 & Drupal 9 versions of Editor Advanced Image requires
 [Editor](https://www.drupal.org/project/editor) and
-[CKEditor](https://www.drupal.org/project/ckeditor).
+[CKEditor 4](https://www.drupal.org/project/ckeditor).
 
 ## Supporting organizations
 

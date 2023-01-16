@@ -33,18 +33,24 @@ By using Editor Advanced Image, you will also be able to:
 
 ## Which version should I use?
 
-| Drupal Core |     EAI     |
-|:-----------:|:-----------:|
-|    8.7.x    |     1.x     |
-|    8.8.x    | 2.0.0-beta1 |
-|    8.9.x    | 2.0.0-beta1 |
-|     9.x     |     2.x     |
-|     9.3     |    2.0.1    |
+| Drupal Core | CKEditor | Editor Advanced Image |
+|:-----------:|:--------:|:---------------------:|
+|    8.7.x    |   4.x    |          1.x          |
+|    8.8.x    |   4.x    |     8.x-2.0-beta1     |
+|     9.x     |   4.x    |        8.x-2.1        |
+|     9.x     |   5.x    |        8.x-2.1        |
+|    10.x     |   4.x    |        8.x-2.1        |
+|    10.x     |   5.x    |         3.0.x         |
 
 ## Dependencies
 
-The Drupal 8 & Drupal 9 version of Editor Advanced Image requires nothing !
-Feel free to use it.
+The Drupal 10 version of Editor Advanced Image requires
+[Editor](https://www.drupal.org/project/editor) and
+[CKEditor 5](https://ckeditor.com/ckeditor-5/).
+
+The Drupal 8 & Drupal 9 versions of Editor Advanced Image requires
+[Editor](https://www.drupal.org/project/editor) and
+[CKEditor 4](https://www.drupal.org/project/ckeditor).
 
 ## Supporting organizations
 

@@ -24,7 +24,7 @@ First of all, you need to have the following tools installed globally
 on your environment:
 
   * drush
-  * Latest dev release of Drupal 8.x/9.x.
+  * Latest dev release of Drupal 8.x/9.x/10.x.
   * docker
   * docker-compose
 
@@ -32,7 +32,7 @@ on your environment:
 
 Once run, you will be able to access to your fresh installed Drupal on `localhost::8888`.
 
-    docker-compose build --pull --build-arg BASE_IMAGE_TAG=9.3 drupal
+    docker-compose build --pull --build-arg BASE_IMAGE_TAG=9.4 drupal
     (get a coffee, this will take some time...)
     docker-compose up -d drupal chrome
     docker-compose exec -u www-data drupal drush site-install standard --db-url="mysql://drupal:drupal@db/drupal" -y

@@ -106,7 +106,7 @@ class CKEditor5EditorAdvancedImageEditorFormatTest extends WebDriverTestBase {
           ],
         ],
         'plugins' => [
-          'editor_advanced_image_image' => EditorAdvancedImage::DEFAULT_CONFIGURATION,
+          'ckeditor5_editorAdvancedImage' => EditorAdvancedImage::DEFAULT_CONFIGURATION,
         ],
       ],
       'image_upload' => [
@@ -211,12 +211,12 @@ class CKEditor5EditorAdvancedImageEditorFormatTest extends WebDriverTestBase {
     $page->clickLink('Editor Advanced Image');
 
     // Enable the title attribute of Editor Advanced Image.
-    $page->checkField('editor[settings][plugins][editor_advanced_image_image][enabled_attributes][title]');
+    $page->checkField('editor[settings][plugins][ckeditor5_editorAdvancedImage][enabled_attributes][title]');
     $assert_session->assertWaitOnAjaxRequest();
     $this->assertTrue($page->hasCheckedField('Title (title)'));
 
     // Set a default class.
-    $page->fillField('editor[settings][plugins][editor_advanced_image_image][default_class]', 'img-responsive');
+    $page->fillField('editor[settings][plugins][ckeditor5_editorAdvancedImage][default_class]', 'img-responsive');
 
     // Save the form.
     $page->pressButton('Save configuration');
@@ -237,7 +237,7 @@ class CKEditor5EditorAdvancedImageEditorFormatTest extends WebDriverTestBase {
     $this->assertTrue($page->hasCheckedField('Title (title)'));
     $allowed_html_field = $assert_session->fieldExists('filters[filter_html][settings][allowed_html]');
     $this->assertSame('<br> <p> <strong> <em> <a href> <img src alt height width data-entity-uuid data-entity-type title class>', $allowed_html_field->getValue());
-    $default_class = $assert_session->fieldExists('editor[settings][plugins][editor_advanced_image_image][default_class]');
+    $default_class = $assert_session->fieldExists('editor[settings][plugins][ckeditor5_editorAdvancedImage][default_class]');
     $this->assertSame('img-responsive', $default_class->getValue());
   }
 

@@ -20,7 +20,7 @@ use Drupal\editor_advanced_image\Plugin\CKEditor5Plugin\EditorAdvancedImage as C
  *     "editoradvancedimage",
  *   },
  *   cke5_plugin_elements_subset_configuration = {
- *     "editor_advanced_image_image",
+ *     "ckeditor5_editorAdvancedImage",
  *   }
  * )
  *
@@ -52,7 +52,7 @@ class EditorAdvancedImage extends PluginBase implements CKEditor4To5UpgradePlugi
         }
 
         return [
-          'editor_advanced_image_image' => [
+          'ckeditor5_editorAdvancedImage' => [
             'default_class' => $default_class,
             'enabled_attributes' => [],
           ],
@@ -70,7 +70,7 @@ class EditorAdvancedImage extends PluginBase implements CKEditor4To5UpgradePlugi
    */
   public function computeCKEditor5PluginSubsetConfiguration(string $cke5_plugin_id, FilterFormatInterface $text_format): ?array {
     switch ($cke5_plugin_id) {
-      case 'editor_advanced_image_image':
+      case 'ckeditor5_editorAdvancedImage':
       default:
         $configuration = [];
 

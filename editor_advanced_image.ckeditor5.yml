@@ -1,5 +1,4 @@
-# @TODO rename as ckeditor5_editorAdvancedImage
-editor_advanced_image_image:
+ckeditor5_editorAdvancedImage:
   ckeditor5:
     plugins:
       - editorAdvancedImage.EditorAdvancedImage

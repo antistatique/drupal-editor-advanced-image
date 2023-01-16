@@ -108,7 +108,7 @@ class EditorAdvancedImage extends CKEditor5PluginDefault implements CKEditor5Plu
    */
   public function validateConfigurationForm(array &$form, FormStateInterface $form_state) {
     // Match the config schema structure at
-    // ckeditor5.plugin.editor_advanced_image_image.
+    // ckeditor5.plugin.ckeditor5_editorAdvancedImage.
     $form_state->setValue('default_class', $form_state->getValue('default_class'));
 
     $form_value = $form_state->getValue('enabled_attributes');

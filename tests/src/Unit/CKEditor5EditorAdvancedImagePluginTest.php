@@ -28,9 +28,9 @@ class CKEditor5EditorAdvancedImagePluginTest extends UnitTestCase {
   public function testGetDynamicPluginConfig(array $configuration, array $expected_dynamic_config): void {
     // Read the CKEditor 5 plugin's static configuration from YAML.
     $ckeditor5_plugin_definitions = Yaml::parseFile(__DIR__ . '/../../../editor_advanced_image.ckeditor5.yml');
-    $static_plugin_config = $ckeditor5_plugin_definitions['editor_advanced_image_image']['ckeditor5']['config'];
+    $static_plugin_config = $ckeditor5_plugin_definitions['ckeditor5_editorAdvancedImage']['ckeditor5']['config'];
 
-    $plugin = new EditorAdvancedImage($configuration, 'editor_advanced_image_image', NULL);
+    $plugin = new EditorAdvancedImage($configuration, 'ckeditor5_editorAdvancedImage', NULL);
     $editor_mock = $this->createMock(EditorInterface::class);
     $dynamic_plugin_config = $plugin->getDynamicPluginConfig($static_plugin_config, $editor_mock);
 
@@ -184,7 +184,7 @@ class CKEditor5EditorAdvancedImagePluginTest extends UnitTestCase {
    * @dataProvider providerGetElementsSubset
    */
   public function testGetElementsSubset(array $configuration, array $expected_subset): void {
-    $plugin = new EditorAdvancedImage($configuration, 'editor_advanced_image_image', NULL);
+    $plugin = new EditorAdvancedImage($configuration, 'ckeditor5_editorAdvancedImage', NULL);
     $this->assertSame($expected_subset, $plugin->getElementsSubset());
   }
 

@@ -83,7 +83,7 @@ class CKEditor5EditorAdvancedImageDialogTest extends WebDriverTestBase {
           ],
         ],
         'plugins' => [
-          'editor_advanced_image_image' => [
+          'ckeditor5_editorAdvancedImage' => [
             'enabled_attributes' => [],
             'default_class' => '',
           ],
@@ -162,7 +162,7 @@ class CKEditor5EditorAdvancedImageDialogTest extends WebDriverTestBase {
     $editor = Editor::load('test_format');
     $settings = $editor->getSettings();
 
-    $settings['plugins']['editor_advanced_image_image']['enabled_attributes'][] = $attribute_name;
+    $settings['plugins']['ckeditor5_editorAdvancedImage']['enabled_attributes'][] = $attribute_name;
     $editor->setSettings($settings)->save();
 
     $page = $this->getSession()->getPage();
@@ -221,8 +221,8 @@ class CKEditor5EditorAdvancedImageDialogTest extends WebDriverTestBase {
     // the EditorAdvancedImage plugin.
     $editor = Editor::load('test_format');
     $settings = $editor->getSettings();
-    $settings['plugins']['editor_advanced_image_image']['enabled_attributes'][] = 'class';
-    $settings['plugins']['editor_advanced_image_image']['default_class'] = 'img-responsive';
+    $settings['plugins']['ckeditor5_editorAdvancedImage']['enabled_attributes'][] = 'class';
+    $settings['plugins']['ckeditor5_editorAdvancedImage']['default_class'] = 'img-responsive';
     $editor->setSettings($settings)->save();
 
     $page = $this->getSession()->getPage();

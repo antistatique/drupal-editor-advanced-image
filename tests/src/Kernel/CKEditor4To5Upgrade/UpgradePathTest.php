@@ -150,7 +150,7 @@ class UpgradePathTest extends SmartDefaultSettingsTest {
         'toolbar' => $expected_ckeditor5_toolbar,
         'plugins' => [
           'ckeditor5_imageResize' => ['allow_resize' => TRUE],
-          'editor_advanced_image_image' => [
+          'ckeditor5_editorAdvancedImage' => [
             'default_class' => '',
             'enabled_attributes' => [
               'title',
@@ -171,7 +171,7 @@ class UpgradePathTest extends SmartDefaultSettingsTest {
         'toolbar' => $expected_ckeditor5_toolbar,
         'plugins' => [
           'ckeditor5_imageResize' => ['allow_resize' => TRUE],
-          'editor_advanced_image_image' => [
+          'ckeditor5_editorAdvancedImage' => [
             'default_class' => '',
             'enabled_attributes' => [
               'class',
@@ -192,7 +192,7 @@ class UpgradePathTest extends SmartDefaultSettingsTest {
         'toolbar' => $expected_ckeditor5_toolbar,
         'plugins' => [
           'ckeditor5_imageResize' => ['allow_resize' => TRUE],
-          'editor_advanced_image_image' => [
+          'ckeditor5_editorAdvancedImage' => [
             'default_class' => '',
             'enabled_attributes' => [
               'id',
@@ -218,7 +218,7 @@ class UpgradePathTest extends SmartDefaultSettingsTest {
         ],
         'plugins' => [
           'ckeditor5_imageResize' => ['allow_resize' => TRUE],
-          'editor_advanced_image_image' => EditorAdvancedImage::DEFAULT_CONFIGURATION,
+          'ckeditor5_editorAdvancedImage' => EditorAdvancedImage::DEFAULT_CONFIGURATION,
         ],
       ],
       'expected_superset' => '<img class>',
@@ -249,7 +249,7 @@ class UpgradePathTest extends SmartDefaultSettingsTest {
               '<img foo bar="baz">',
             ],
           ],
-          'editor_advanced_image_image' => [
+          'ckeditor5_editorAdvancedImage' => [
             'default_class' => 'foobar',
             'enabled_attributes' => [
               'class',
@@ -291,9 +291,9 @@ class UpgradePathTest extends SmartDefaultSettingsTest {
     sort($full_html_configuration['enabled_attributes']);
 
     foreach (parent::provider() as $label => $case) {
-      // The `editor_advanced_image_image` plugin settings will appear for every
-      // upgraded text editor while editor_advanced_image is installed, as long
-      // as it has the `DrupalImage` button enabled in CKEditor 4.
+      // The `ckeditor5_editorAdvancedImage` plugin settings will appear for
+      // every upgraded text editor while editor_advanced_image is installed,
+      // as long as it has the `DrupalImage` button enabled in CKEditor 4.
       if (!in_array($case['format_id'], $formats_not_supporting_img, TRUE)) {
         $case['expected_superset'] .= ' <img class>';
         $case['expected_superset'] = trim($case['expected_superset'], ' ');
@@ -315,9 +315,9 @@ class UpgradePathTest extends SmartDefaultSettingsTest {
 
         // Add the default Editor Advanced Image configuration excepted for
         // full_html that must enable every Editor Advanced Image options.
-        $case['expected_ckeditor5_settings']['plugins']['editor_advanced_image_image'] = EditorAdvancedImage::DEFAULT_CONFIGURATION;
+        $case['expected_ckeditor5_settings']['plugins']['ckeditor5_editorAdvancedImage'] = EditorAdvancedImage::DEFAULT_CONFIGURATION;
         if ($case['format_id'] === 'full_html') {
-          $case['expected_ckeditor5_settings']['plugins']['editor_advanced_image_image'] = $full_html_configuration;
+          $case['expected_ckeditor5_settings']['plugins']['ckeditor5_editorAdvancedImage'] = $full_html_configuration;
           unset($case['expected_messages']['warning']);
         }
 

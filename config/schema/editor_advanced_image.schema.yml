@@ -9,7 +9,6 @@ ckeditor.plugin.editoradvancedimage:
       label: 'Default image class(es)'
 
 # Plugin \Drupal\editor_advanced_image\Plugin\CKEditor5Plugin\EditorAdvancedImage
-# @TODO rename ckeditor5.plugin.ckeditor5_editorAdvancedImage
 ckeditor5.plugin.editor_advanced_image_image:
   type: mapping
   label: 'Editor Advanced Image'

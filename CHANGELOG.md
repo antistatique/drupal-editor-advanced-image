@@ -5,10 +5,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [2.1.0] - 2023-01-16
 ### Added
 - add official support of drupal 10.0 (with CKEditor 4)
 - add support for CKEditor 5 - Issue #3333406 by wengerk: CKEditor 5 compatibility
-- upgrade path from CKEdditor 4 to CKEditor 5
+- upgrade path from CKEditor 4 to CKEditor 5
 - add official support of drupal 9.5
 
 ### Removed
@@ -57,7 +59,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - First draft.
 
-[Unreleased]: https://github.com/antistatique/drupal-editor-advanced-image/compare/8.x-2.0...HEAD
+[Unreleased]: https://github.com/antistatique/drupal-editor-advanced-image/compare/8.x-2.1...HEAD
+[2.1.0]: https://github.com/antistatique/drupal-editor-advanced-image/compare/8.x-2.0...8.x-2.1
 [2.0.0]: https://github.com/antistatique/drupal-editor-advanced-image/compare/8.x-2.0-beta1...8.x-2.0
 [2.0.0-beta1]: https://github.com/antistatique/drupal-editor-advanced-image/compare/8.x-1.0-beta5...8.x-2.0-beta1
 [1.0.0-beta5]: https://github.com/antistatique/drupal-editor-advanced-image/compare/8.x-1.0-beta4...8.x-1.0-beta5

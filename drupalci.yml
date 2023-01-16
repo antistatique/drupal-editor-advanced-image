@@ -1,0 +1,26 @@
+# This is the DrupalCI testbot build file for Drupal core and modified for
+# the editor_advanced_image module.
+build:
+  assessment:
+    validate_codebase:
+      phplint:
+      container_composer:
+      csslint:
+      eslint:
+      phpcs:
+    testing:
+      container_command:
+        commands:
+          - cd ${SOURCE_DIR}
+          # Install drupal/ckeditor (CKEditor 4) as we keep supporting both CK4 & CK5.
+          - sudo composer require "drupal/ckeditor" --no-scripts
+      run_tests.standard:
+        types: 'Simpletest,PHPUnit-Unit,PHPUnit-Kernel,PHPUnit-Functional'
+        # Must be suppressed as we run deprecated conde (CKEditor 4) on purpose.
+        suppress-deprecations: true
+      run_tests.js:
+        concurrency: 1
+        types: 'PHPUnit-FunctionalJavascript'
+        # Must be suppressed as we run deprecated conde (CKEditor 4) on purpose.
+        suppress-deprecations: true
+      nightwatchjs:

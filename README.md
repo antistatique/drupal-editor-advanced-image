@@ -1,35 +1,33 @@
 # Editor Advanced Image
 
-Enhances the inline-image Dialog in D8 CKEditor.
-
-|       Travis-CI        |        Downloads        |         Releases         |
-|:----------------------:|:-----------------------:|:------------------------:|
-| [![Build Status](https://github.com/antistatique/drupal-editor-advanced-image/actions/workflows/ci.yml/badge.svg)](https://github.com/antistatique/drupal-editor-advanced-image/actions/workflows/ci.yml) | [![Code styles](https://github.com/antistatique/drupal-editor-advanced-image/actions/workflows/styles.yml/badge.svg)](https://github.com/antistatique/drupal-editor-advanced-image/actions/workflows/styles.yml) | [![Latest Stable Version](https://img.shields.io/badge/release-v2.0-blue.svg?style=flat-square)](https://www.drupal.org/project/editor_advanced_image/releases) |
+Enhances the image Balloon in CKEditor 4 & CKEditor 5.
 
 ## Features
 
-Allows to define the following attributes:
-
+Allows to define the following attributes on an Image:
 - title
 - class
 - id
 
-By using Editor Advanced Image, you will also be able to:
-
-- define a default class for every images on an Editor
-  (such `img-fluid` or `img-responsive`).
-
-## Standard usage scenario
+## Standard usage scenario for CKEditor 4
 
 1. Install the module.
-1. Open the "Text formats and editor" admin page admin/config/content/formats.
+1. Open the "Text formats and editor" admin page [/admin/config/content/formats](/admin/config/content/formats).
 
-    If the "Limit allowed HTML tags and correct faulty HTML" filter is disabled
-    you dont have anything to do with this text format.
+   If the "Limit allowed HTML tags and correct faulty HTML" filter is disabled
+   you dont have anything to do with this text format.
 
-    Otherwise, add the "title", "class" and/or "id" attributes to
-    the "allowed HTML tags" field.
-    (only those whitelisted will show up in the dialog).
+   Otherwise, add the "title", "class" and/or "id" attributes to
+   the "allowed HTML tags" field.
+   (only those whitelisted will show up in the dialog).
+
+## Standard usage scenario for CKEditor 5
+
+1. Install the module.
+1. Open the "Text formats and editor" admin page [/admin/config/content/formats](/admin/config/content/formats).
+
+    Use the "Editor Advanced Image" configuration form to enable any attributes.
+   Only those whitelisted here will be visible in CKEditor 5 Balloon.
 
 ## Which version should I use?
 

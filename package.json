@@ -1,10 +1,13 @@
 {
+  "license": "GPL-2.0-or-later",
   "scripts": {
+    "watch": "webpack --mode development --watch",
+    "build": "webpack",
     "lint:core-js": "node ./node_modules/eslint/bin/eslint.js .",
     "lint:core-js-passing": "node ./node_modules/eslint/bin/eslint.js --quiet --config=.eslintrc.passing.json .",
     "lint:core-js-stats": "node ./node_modules/eslint/bin/eslint.js --format=./scripts/js/eslint-stats-by-type.js .",
-    "prettier": "prettier --write \"./**/*.es6.js\" \"./**/*.js\" \"./tests/Drupal/Nightwatch/**/*.js\"",
-    "prettier-check": "prettier --check \"./**/*.es6.js\" \"./**/*.js\" \"./tests/Drupal/Nightwatch/**/*.js\""
+    "prettier": "prettier --write \"./**/*.js\"",
+    "prettier-check": "prettier --check \"./**/*.js\""
   },
   "devDependencies": {
     "eslint": "^4.19.1",
@@ -14,6 +17,13 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-prettier": "^2.6.2",
     "eslint-plugin-react": "^7.10.0",
-    "prettier": "^1.15.2"
+    "prettier": "^1.15.2",
+    "@ckeditor/ckeditor5-dev-utils": "^25.4.5",
+    "ckeditor5": "~31.0.0",
+    "@ckeditor/ckeditor5-image": "~31.0.0",
+    "raw-loader": "^4.0.2",
+    "terser-webpack-plugin": "^5.2.0",
+    "webpack": "^5.51.1",
+    "webpack-cli": "^4.4.0"
   }
 }

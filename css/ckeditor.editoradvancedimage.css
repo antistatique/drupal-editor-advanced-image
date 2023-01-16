@@ -1,0 +1,12 @@
+img {
+  max-width: 100%;
+}
+
+.ck.ck-responsive-form.ck-editor-advanced-image {
+  width: auto;
+}
+
+.ck.ck-responsive-form.ck-editor-advanced-image .ck-labeled-field-view {
+  margin-left: 0 !important;
+  margin-top: 10px;
+}

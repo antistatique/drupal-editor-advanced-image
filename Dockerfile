@@ -1,7 +1,7 @@
 ARG BASE_IMAGE_TAG=9.4
 FROM wengerk/drupal-for-contrib:${BASE_IMAGE_TAG}
 
-# Disable deprecation notice because supporting both Drupal 8 & Drupal 9.
+# Disable deprecation notice as CKEditor4 module will throw an exception until we remove support of Drupal 9.
 ENV SYMFONY_DEPRECATIONS_HELPER=disabled
 
 # Install drupal/ckeditor (CKEditor 4) as we keep supporting CK4 & CK5.

@@ -1,4 +1,5 @@
 # Plugin \Drupal\ckeditor\Plugin\ckeditor\plugin\EditorAdvancedImage
+# CKEditor 4 configurations.
 ckeditor.plugin.editoradvancedimage:
   type: mapping
   label: 'Editor Advanced Image'
@@ -6,3 +7,22 @@ ckeditor.plugin.editoradvancedimage:
     default_class:
       type: string
       label: 'Default image class(es)'
+
+# Plugin \Drupal\editor_advanced_image\Plugin\CKEditor5Plugin\EditorAdvancedImage
+ckeditor5.plugin.editor_advanced_image_image:
+  type: mapping
+  label: 'Editor Advanced Image'
+  mapping:
+    default_class:
+      type: string
+      label: 'Default image class(es)'
+    enabled_attributes:
+      type: sequence
+      orderby: value
+      label: 'Enabled attributes'
+      sequence:
+        type: string
+        label: 'Enabled attribute'
+        constraints:
+          Choice:
+            callback: \Drupal\editor_advanced_image\Plugin\CKEditor5Plugin\EditorAdvancedImage::validChoices

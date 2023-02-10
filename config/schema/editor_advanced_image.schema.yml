@@ -13,6 +13,9 @@ ckeditor5.plugin.editor_advanced_image_image:
   type: mapping
   label: 'Editor Advanced Image'
   mapping:
+    disable_balloon:
+      type: boolean
+      label: 'Disable Balloon'
     default_class:
       type: string
       label: 'Default image class(es)'

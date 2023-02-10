@@ -25,6 +25,7 @@ class EditorAdvancedImage extends CKEditor5PluginDefault implements CKEditor5Plu
    * @var string[][]
    */
   const DEFAULT_CONFIGURATION = [
+    'disable_balloon' => false,
     'default_class' => '',
     'enabled_attributes' => [
       'class',
@@ -67,6 +68,13 @@ class EditorAdvancedImage extends CKEditor5PluginDefault implements CKEditor5Plu
    * Form for choosing default class attribute of <img> will be populated.
    */
   public function buildConfigurationForm(array $form, FormStateInterface $form_state) {
+    $form['disable_balloon'] = [
+      '#type' => 'checkbox',
+      '#default_value' => $this->configuration['disable_balloon'] ?? self::DEFAULT_CONFIGURATION['disable_balloon'],
+      '#title' => $this->t('Disable Balloon'),
+      '#description' => $this->t('When checked the plugin will no more display the CKEditor 5 Balloon/Form button on Image element.'),
+    ];
+
     $form['enabled_attributes'] = [
       '#type' => 'fieldset',
       '#title' => $this->t('Enabled attributes'),
@@ -122,6 +130,7 @@ class EditorAdvancedImage extends CKEditor5PluginDefault implements CKEditor5Plu
   public function submitConfigurationForm(array &$form, FormStateInterface $form_state) {
     $this->configuration['default_class'] = $form_state->getValue('default_class');
     $this->configuration['enabled_attributes'] = $form_state->getValue('enabled_attributes');
+    $this->configuration['disable_balloon'] = $form_state->getValue('disable_balloon');
   }
 
   /**
@@ -198,6 +207,7 @@ class EditorAdvancedImage extends CKEditor5PluginDefault implements CKEditor5Plu
         ],
       ],
       'editorAdvancedImageOptions' => [
+        'disable_balloon' => $this->configuration['disable_balloon'],
         'defaults' => ['class' => $this->configuration['default_class']],
         'allowedAttributes' => $allowed_attributes,
       ],

@@ -12,6 +12,7 @@ import { Command } from "ckeditor5/src/core";
  * @private
  */
 export default class EditorAdvancedImageCommand extends Command {
+
   /**
    * Constructs a new object.
    *

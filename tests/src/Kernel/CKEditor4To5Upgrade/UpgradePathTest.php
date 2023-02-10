@@ -151,6 +151,7 @@ class UpgradePathTest extends SmartDefaultSettingsTest {
         'plugins' => [
           'ckeditor5_imageResize' => ['allow_resize' => TRUE],
           'editor_advanced_image_image' => [
+            'disable_balloon' => false,
             'default_class' => '',
             'enabled_attributes' => [
               'title',
@@ -172,6 +173,7 @@ class UpgradePathTest extends SmartDefaultSettingsTest {
         'plugins' => [
           'ckeditor5_imageResize' => ['allow_resize' => TRUE],
           'editor_advanced_image_image' => [
+            'disable_balloon' => false,
             'default_class' => '',
             'enabled_attributes' => [
               'class',
@@ -193,6 +195,7 @@ class UpgradePathTest extends SmartDefaultSettingsTest {
         'plugins' => [
           'ckeditor5_imageResize' => ['allow_resize' => TRUE],
           'editor_advanced_image_image' => [
+            'disable_balloon' => false,
             'default_class' => '',
             'enabled_attributes' => [
               'id',
@@ -250,6 +253,7 @@ class UpgradePathTest extends SmartDefaultSettingsTest {
             ],
           ],
           'editor_advanced_image_image' => [
+            'disable_balloon' => false,
             'default_class' => 'foobar',
             'enabled_attributes' => [
               'class',
@@ -285,6 +289,7 @@ class UpgradePathTest extends SmartDefaultSettingsTest {
       'minimal_ckeditor_wrong_allowed_html',
     ];
     $full_html_configuration = [
+      'disable_balloon' => false,
       'default_class' => '',
       'enabled_attributes' => array_keys(EditorAdvancedImage::SUPPORTED_ATTRIBUTES),
     ];

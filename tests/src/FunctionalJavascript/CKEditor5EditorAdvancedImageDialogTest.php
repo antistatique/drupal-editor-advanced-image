@@ -180,6 +180,7 @@ class CKEditor5EditorAdvancedImageDialogTest extends WebDriverTestBase {
 
     // Ensure that the Editor Advanced Image button is visible on the Image
     // Balloon.
+    $this->assertEditorButtonEnabled('editor_advanced_image_image');
     $this->assertNotEmpty($eai_button = $this->getBalloonButton('Editor Advanced Image'));
     $eai_button->click();
 
@@ -243,8 +244,7 @@ class CKEditor5EditorAdvancedImageDialogTest extends WebDriverTestBase {
     $eai_button->click();
 
     // Ensure the enabled attribute will enable only the corresponding input.
-    $balloon = $this->assertVisibleBalloon('.ck-editor-advanced-image');
-    $this->createScreenshot(\Drupal::root() . '/sites/default/files/simpletest/screen.png');
+    $this->assertVisibleBalloon('.ck-editor-advanced-image');
 
     // Ensure the class input will be filled with the default value.
     $eai_input = $page->find('css', '.ck-balloon-panel .ck-editor-advanced-image input[type=text]');
@@ -294,6 +294,43 @@ class CKEditor5EditorAdvancedImageDialogTest extends WebDriverTestBase {
         'input_label' => 'ID',
       ],
     ];
+  }
+
+  /**
+   * Tests that EditorAdvancedImage "Disable Balloon" setting prevent EAI btn.
+   */
+  public function testDisabledBalloon(): void {
+    // Update text format and editor to disable the EAI balloon.
+    $editor = Editor::load('test_format');
+    $settings = $editor->getSettings();
+    $settings['plugins']['editor_advanced_image_image']['disable_balloon'] = true;
+    $settings['plugins']['editor_advanced_image_image']['default_class'] = 'img-responsive';
+    $editor->setSettings($settings)->save();
+
+    $page = $this->getSession()->getPage();
+
+    $this->drupalGet($this->testNode->toUrl('edit-form'));
+    $this->waitForEditor();
+    $assert_session = $this->assertSession();
+
+    // Confirm the images widget exists.
+    $this->assertNotEmpty($image_block = $assert_session->waitForElementVisible('css', ".ck-content .ck-widget.image"));
+
+    // Open the Image balloon.
+    $image_block->click();
+
+    // Ensure the Default Class has been applied directly when the image has
+    // been added to CKEditor 5.
+    $this->assertEmpty($assert_session->waitForElement('css', 'img[class="img-responsive"]'));
+
+    // Ensure that the Editor Advanced Image button is not visible on the Image
+    // Balloon.
+    $button = $this->assertSession()->waitForElementVisible('xpath', "//button[span[text()='Editor Advanced Image']]");
+    $this->assertEmpty($button);
+
+    // Save the node and confirm that the attribute text is retained.
+    $page->pressButton('Save');
+    $this->assertEmpty($assert_session->waitForElement('css', 'img[class="img-responsive"]'));
   }
 
 }

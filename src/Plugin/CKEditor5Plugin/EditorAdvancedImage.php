@@ -72,13 +72,13 @@ class EditorAdvancedImage extends CKEditor5PluginDefault implements CKEditor5Plu
       '#type' => 'checkbox',
       '#default_value' => $this->configuration['disable_balloon'] ?? self::DEFAULT_CONFIGURATION['disable_balloon'],
       '#title' => $this->t('Disable Balloon'),
-      '#description' => $this->t('When checked the plugin will no more display the CKEditor 5 Balloon/Form button on Image element.'),
+      '#description' => $this->t('When checked the plugin will no more display the CKEditor 5 Balloon/Form button on Image element.<br>This feature is intend to be used when willing to set default <code>class</code> on images without allowing any user attribute edition.'),
     ];
 
     $form['enabled_attributes'] = [
       '#type' => 'fieldset',
       '#title' => $this->t('Enabled attributes'),
-      '#description' => $this->t('These are the attributes that will appear when creating or editing images.'),
+      '#description' => $this->t('These are the attributes that will appear when creating or editing images.<br>Combined with <code>Disable Balloon</code>, it\'s then possible to set default images <code>class</code> without giving access to the Balloon Form.'),
     ];
 
     // UI labels corresponding to each of the supported attributes.

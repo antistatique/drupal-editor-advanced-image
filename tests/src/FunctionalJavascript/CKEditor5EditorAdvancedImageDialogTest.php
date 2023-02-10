@@ -232,11 +232,19 @@ class CKEditor5EditorAdvancedImageDialogTest extends WebDriverTestBase {
     $this->waitForEditor();
     $assert_session = $this->assertSession();
 
+    // Already existing image will not be affected by default Class.
+    // But dynamically added image will be.
+    $this->assertEmpty($assert_session->waitForElement('css', 'img[class="img-responsive"]'));
+
     // Confirm the images widget exists.
     $this->assertNotEmpty($image_block = $assert_session->waitForElementVisible('css', ".ck-content .ck-widget.image"));
 
     // Open the Image balloon.
     $image_block->click();
+
+    // Ensure the Default Class has been applied directly when the image has
+    // been added to CKEditor 5.
+    $this->assertNotEmpty($assert_session->waitForElement('css', 'img[class="img-responsive"]'));
 
     // Ensure that the Editor Advanced Image button is visible on the Image
     // Balloon.
@@ -313,6 +321,10 @@ class CKEditor5EditorAdvancedImageDialogTest extends WebDriverTestBase {
     $this->waitForEditor();
     $assert_session = $this->assertSession();
 
+    // Already existing image will not be affected by default Class.
+    // But dynamically added image will be.
+    $this->assertEmpty($assert_session->waitForElement('css', 'img[class="img-responsive"]'));
+
     // Confirm the images widget exists.
     $this->assertNotEmpty($image_block = $assert_session->waitForElementVisible('css', ".ck-content .ck-widget.image"));
 
@@ -321,7 +333,7 @@ class CKEditor5EditorAdvancedImageDialogTest extends WebDriverTestBase {
 
     // Ensure the Default Class has been applied directly when the image has
     // been added to CKEditor 5.
-    $this->assertEmpty($assert_session->waitForElement('css', 'img[class="img-responsive"]'));
+    $this->assertNotEmpty($assert_session->waitForElement('css', 'img[class="img-responsive"]'));
 
     // Ensure that the Editor Advanced Image button is not visible on the Image
     // Balloon.
@@ -330,7 +342,7 @@ class CKEditor5EditorAdvancedImageDialogTest extends WebDriverTestBase {
 
     // Save the node and confirm that the attribute text is retained.
     $page->pressButton('Save');
-    $this->assertEmpty($assert_session->waitForElement('css', 'img[class="img-responsive"]'));
+    $this->assertNotEmpty($assert_session->waitForElement('css', 'img[class="img-responsive"]'));
   }
 
 }

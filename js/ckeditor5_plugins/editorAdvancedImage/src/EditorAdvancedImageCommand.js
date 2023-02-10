@@ -73,6 +73,9 @@ export default class EditorAdvancedImageCommand extends Command {
     if (element.hasAttribute("id")) {
       this.attributes.id = element.getAttribute("id");
     }
+
+    // Force an execution at refresh time in order to set attributes even when the Balloon form has still not been used.
+    this.execute(this.attributes);
   }
 
   /**

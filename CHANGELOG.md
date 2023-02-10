@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added
 - CKEditor 5: Allow disabling the Balloon - Issue #3337623 by mvogel, wengerk
+- CKEditor 5: automatically apply configured default CSS class - Issue #3337618 by mvogel
 
 ## [2.1.0] - 2023-01-16
 ### Added

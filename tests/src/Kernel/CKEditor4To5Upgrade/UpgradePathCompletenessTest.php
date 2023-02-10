@@ -20,7 +20,6 @@ if (class_exists(Real::class)) {
       $this->cke4PluginManager = $this->container->get('plugin.manager.ckeditor.plugin');
 
       $this->expectException(\OutOfBoundsException::class);
-
       // Since Drupal 10.0.x the Plugin name has changed LlamaCSS vs Llama.
       $this->expectExceptionMessageMatches('/^No upgrade path found for the "Llama(CSS)?" button\.$/');
       $this->testButtons();

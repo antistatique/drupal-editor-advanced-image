@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - CKEditor 5: Allow disabling the Balloon - Issue #3337623 by mvogel, wengerk
 
+### Fixed
+- fix running tests on multiple Drupal (9 & 10) with CKEditor4to5UpgradeCompletenessTest
+
 ## [2.1.0] - 2023-01-16
 ### Added
 - add official support of drupal 10.0 (with CKEditor 4)

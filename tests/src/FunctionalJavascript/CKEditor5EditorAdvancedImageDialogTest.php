@@ -180,6 +180,7 @@ class CKEditor5EditorAdvancedImageDialogTest extends WebDriverTestBase {
 
     // Ensure that the Editor Advanced Image button is visible on the Image
     // Balloon.
+    $this->assertEditorButtonEnabled('editor_advanced_image_image');
     $this->assertNotEmpty($eai_button = $this->getBalloonButton('Editor Advanced Image'));
     $eai_button->click();
 

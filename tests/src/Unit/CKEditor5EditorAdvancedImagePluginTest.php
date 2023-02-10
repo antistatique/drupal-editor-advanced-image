@@ -52,6 +52,7 @@ class CKEditor5EditorAdvancedImagePluginTest extends UnitTestCase {
             ],
           ],
           'editorAdvancedImageOptions' => [
+            'disable_balloon' => FALSE,
             'defaults' => ['class' => ''],
             'allowedAttributes' => ['class'],
           ],
@@ -67,6 +68,7 @@ class CKEditor5EditorAdvancedImagePluginTest extends UnitTestCase {
             ],
           ],
           'editorAdvancedImageOptions' => [
+            'disable_balloon' => FALSE,
             'defaults' => ['class' => ''],
             'allowedAttributes' => ['class'],
           ],
@@ -85,6 +87,7 @@ class CKEditor5EditorAdvancedImagePluginTest extends UnitTestCase {
             ],
           ],
           'editorAdvancedImageOptions' => [
+            'disable_balloon' => FALSE,
             'defaults' => ['class' => ''],
             'allowedAttributes' => [],
           ],
@@ -103,6 +106,7 @@ class CKEditor5EditorAdvancedImagePluginTest extends UnitTestCase {
             ],
           ],
           'editorAdvancedImageOptions' => [
+            'disable_balloon' => FALSE,
             'defaults' => ['class' => 'foobar'],
             'allowedAttributes' => [],
           ],
@@ -122,6 +126,7 @@ class CKEditor5EditorAdvancedImagePluginTest extends UnitTestCase {
             ],
           ],
           'editorAdvancedImageOptions' => [
+            'disable_balloon' => FALSE,
             'defaults' => ['class' => ''],
             'allowedAttributes' => ['class'],
           ],
@@ -142,6 +147,29 @@ class CKEditor5EditorAdvancedImagePluginTest extends UnitTestCase {
             ],
           ],
           'editorAdvancedImageOptions' => [
+            'disable_balloon' => FALSE,
+            'defaults' => ['class' => 'foobar'],
+            'allowedAttributes' => ['class'],
+          ],
+        ],
+      ],
+      'Attribute class with default class and disabled Ballon' => [
+        [
+          'disable_balloon' => TRUE,
+          'default_class' => 'foobar',
+          'enabled_attributes' => [
+            'class',
+          ],
+        ],
+        [
+          'image' => [
+            'toolbar' => [
+              '|',
+              'editorAdvancedImageButton',
+            ],
+          ],
+          'editorAdvancedImageOptions' => [
+            'disable_balloon' => TRUE,
             'defaults' => ['class' => 'foobar'],
             'allowedAttributes' => ['class'],
           ],
@@ -163,6 +191,7 @@ class CKEditor5EditorAdvancedImagePluginTest extends UnitTestCase {
             ],
           ],
           'editorAdvancedImageOptions' => [
+            'disable_balloon' => FALSE,
             'defaults' => ['class' => ''],
             'allowedAttributes' => ['class', 'title'],
           ],

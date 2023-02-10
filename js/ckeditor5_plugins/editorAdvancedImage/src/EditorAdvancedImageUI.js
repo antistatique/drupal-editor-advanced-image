@@ -36,6 +36,17 @@ export default class EditorAdvancedImageUI extends Plugin {
    * @inheritdoc
    */
   init() {
+    const options = this.editor.config.get("editorAdvancedImageOptions");
+
+    // Prevent creation of Editor Advanced Button & Form when the option "Disable Balloon" is enabled.
+    if (
+      options !== undefined &&
+      options.disable_balloon !== undefined &&
+      options.disable_balloon
+    ) {
+      return;
+    }
+
     this._createButton();
     this._createForm();
   }

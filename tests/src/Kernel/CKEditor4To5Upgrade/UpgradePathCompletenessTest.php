@@ -10,7 +10,23 @@ use Drupal\KernelTests\KernelTestBase;
 // phpcs:ignoreFile
 
 if (class_exists(Real::class)) {
-  class CKEditor4to5UpgradeCompletenessTest extends Real {}
+  class CKEditor4to5UpgradeCompletenessTest extends Real {
+
+    /**
+     * Tests that the test-only CKEditor 4 module does not have an upgrade path.
+     */
+    public function testButtonsWithTestOnlyModule(): void {
+      $this->enableModules(['ckeditor_test']);
+      $this->cke4PluginManager = $this->container->get('plugin.manager.ckeditor.plugin');
+
+      $this->expectException(\OutOfBoundsException::class);
+
+      // Since Drupal 10.0.x the Plugin name has changed LlamaCSS vs Llama.
+      $this->expectExceptionMessageMatches('/^No upgrade path found for the "Llama(CSS)?" button\.$/');
+      $this->testButtons();
+    }
+
+  }
 }
 else {
   class CKEditor4to5UpgradeCompletenessTest extends KernelTestBase {

@@ -53,6 +53,7 @@ class EditorAdvancedImage extends PluginBase implements CKEditor4To5UpgradePlugi
 
         return [
           'editor_advanced_image_image' => [
+            'disable_balloon' => FALSE,
             'default_class' => $default_class,
             'enabled_attributes' => [],
           ],

@@ -203,6 +203,7 @@ class CKEditor5EditorAdvancedImageEditorFormatTest extends WebDriverTestBase {
 
     // Assert that Editor Advanced Image attribute "class" is enabled by
     // default.
+    $this->assertFalse($page->hasCheckedField('Disable Balloon'));
     $this->assertTrue($page->hasCheckedField('CSS classes (class)'));
     $this->assertFalse($page->hasCheckedField('Title (title)'));
     $this->assertFalse($page->hasCheckedField('ID (id)'));
@@ -233,6 +234,7 @@ class CKEditor5EditorAdvancedImageEditorFormatTest extends WebDriverTestBase {
 
     // And for good measure, confirm the correct tags are in the form field when
     // returning to the form.
+    $this->assertFalse($page->hasCheckedField('Disable Balloon'));
     $this->assertTrue($page->hasCheckedField('CSS classes (class)'));
     $this->assertTrue($page->hasCheckedField('Title (title)'));
     $allowed_html_field = $assert_session->fieldExists('filters[filter_html][settings][allowed_html]');

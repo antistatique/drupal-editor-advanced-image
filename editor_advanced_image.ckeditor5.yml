@@ -6,6 +6,7 @@ editor_advanced_image_image:
       # These are all options; this will be filtered based on configuration.
       # @see \Drupal\editor_advanced_image\Plugin\CKEditor5Plugin\EditorAdvancedImage::getDynamicPluginConfig()
       editorAdvancedImageOptions:
+        disable_balloon: false
         defaults:
           class: ~
         allowedAttributes:

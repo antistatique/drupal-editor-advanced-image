@@ -6,5 +6,4 @@ package: CKEditor
 
 dependencies:
   - drupal:editor
-  - drupal:ckeditor
   - drupal:ckeditor5

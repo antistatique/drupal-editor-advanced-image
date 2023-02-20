@@ -15,6 +15,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - improve UI of the EAI Ballon form Panel
 
+### Removed
+- remove hard dependency on ckeditor4 - #3337628
+
 ## [2.1.0] - 2023-01-16
 ### Added
 - add official support of drupal 10.0 (with CKEditor 4)

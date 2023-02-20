@@ -174,8 +174,6 @@ export default class EditorAdvancedImageUI extends Plugin {
     // @see \Drupal\editor_advanced_image\Plugin\CKEditor5Plugin\EditorAdvancedImage::getDynamicPluginConfig
     const options = editor.config.get(`editorAdvancedImageOptions`);
 
-    // this._form.disableCssTransitions();
-
     if (!this._isInBalloon) {
       // Place the form into the Balloon.
       this._balloon.add({
@@ -207,7 +205,6 @@ export default class EditorAdvancedImageUI extends Plugin {
         command.attributes.id || "";
       this._form.idAttrInput.fieldView.value = this._form.idAttrInput.fieldView.element.value;
     }
-    // this._form.enableCssTransitions();
   }
 
   /**

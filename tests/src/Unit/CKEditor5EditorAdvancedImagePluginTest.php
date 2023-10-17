@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Drupal\Tests\editor_advanced_image\Unit;
 
-use Drupal\editor_advanced_image\Plugin\CKEditor5Plugin\EditorAdvancedImage;
 use Drupal\editor\EditorInterface;
+use Drupal\editor_advanced_image\Plugin\CKEditor5Plugin\EditorAdvancedImage;
 use Drupal\Tests\UnitTestCase;
 use Symfony\Component\Yaml\Yaml;
 

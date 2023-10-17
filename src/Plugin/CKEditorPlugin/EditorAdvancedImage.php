@@ -2,15 +2,15 @@
 
 namespace Drupal\editor_advanced_image\Plugin\CKEditorPlugin;
 
+use Drupal\ckeditor\CKEditorPluginConfigurableInterface;
+use Drupal\ckeditor\CKEditorPluginContextualInterface;
+use Drupal\ckeditor\CKEditorPluginInterface;
+use Drupal\Core\Extension\ModuleExtensionList;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Plugin\PluginBase;
 use Drupal\editor\Entity\Editor;
-use Drupal\ckeditor\CKEditorPluginInterface;
-use Drupal\ckeditor\CKEditorPluginContextualInterface;
-use Drupal\Core\Form\FormStateInterface;
-use Drupal\ckeditor\CKEditorPluginConfigurableInterface;
-use Drupal\Core\Extension\ModuleExtensionList;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 
 /**
  * CKEditor 4 Editor Advanced Image plugin.

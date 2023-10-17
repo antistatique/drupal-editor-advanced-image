@@ -2,10 +2,10 @@
 
 namespace Drupal\Tests\editor_advanced_image\FunctionalJavascript;
 
+use Drupal\editor\Entity\Editor;
 use Drupal\editor_advanced_image\Plugin\CKEditor5Plugin\EditorAdvancedImage;
 use Drupal\filter\Entity\FilterFormat;
 use Drupal\FunctionalJavascriptTests\WebDriverTestBase;
-use Drupal\editor\Entity\Editor;
 use Drupal\Tests\ckeditor5\Traits\CKEditor5TestTrait;
 use Drupal\Tests\editor_advanced_image\Traits\CKEditor5InteractionTestTrait;
 

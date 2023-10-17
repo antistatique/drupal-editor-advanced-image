@@ -2,8 +2,8 @@
 
 namespace Drupal\Tests\editor_advanced_image\FunctionalJavascript;
 
-use Drupal\FunctionalJavascriptTests\WebDriverTestBase;
 use Behat\Mink\Exception\ElementNotFoundException;
+use Drupal\FunctionalJavascriptTests\WebDriverTestBase;
 
 /**
  * Has some additional helper methods to make test code more readable.

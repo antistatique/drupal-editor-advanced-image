@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [2.2.0] - 2023-10-17
 ### Added
 - CKEditor 5: Allow disabling the Balloon - Issue #3337623 by mvogel, wengerk
 - CKEditor 5: automatically apply configured default CSS class - Issue #3337618 by mvogel
@@ -72,7 +74,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - First draft.
 
-[Unreleased]: https://github.com/antistatique/drupal-editor-advanced-image/compare/8.x-2.1...HEAD
+[Unreleased]: https://github.com/antistatique/drupal-editor-advanced-image/compare/8.x-2.2...HEAD
+[2.2.0]: https://github.com/antistatique/drupal-editor-advanced-image/compare/8.x-2.1...8.x-2.2
 [2.1.0]: https://github.com/antistatique/drupal-editor-advanced-image/compare/8.x-2.0...8.x-2.1
 [2.0.0]: https://github.com/antistatique/drupal-editor-advanced-image/compare/8.x-2.0-beta1...8.x-2.0
 [2.0.0-beta1]: https://github.com/antistatique/drupal-editor-advanced-image/compare/8.x-1.0-beta5...8.x-2.0-beta1

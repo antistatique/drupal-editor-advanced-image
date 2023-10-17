@@ -2,9 +2,9 @@
 
 namespace Drupal\editor_advanced_image\Plugin\CKEditor5Plugin;
 
+use Drupal\ckeditor5\Plugin\CKEditor5PluginConfigurableInterface;
 use Drupal\ckeditor5\Plugin\CKEditor5PluginConfigurableTrait;
 use Drupal\ckeditor5\Plugin\CKEditor5PluginDefault;
-use Drupal\ckeditor5\Plugin\CKEditor5PluginConfigurableInterface;
 use Drupal\ckeditor5\Plugin\CKEditor5PluginElementsSubsetInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\editor\EditorInterface;

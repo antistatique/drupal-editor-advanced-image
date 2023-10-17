@@ -7,8 +7,8 @@ namespace Drupal\editor_advanced_image\Plugin\CKEditor4To5Upgrade;
 use Drupal\ckeditor5\HTMLRestrictions;
 use Drupal\ckeditor5\Plugin\CKEditor4To5UpgradePluginInterface;
 use Drupal\Core\Plugin\PluginBase;
-use Drupal\filter\FilterFormatInterface;
 use Drupal\editor_advanced_image\Plugin\CKEditor5Plugin\EditorAdvancedImage as CKEditor5Plugin;
+use Drupal\filter\FilterFormatInterface;
 
 /**
  * Provides the CKEditor 4 to 5 upgrade for Editor Advanced Image.

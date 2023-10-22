@@ -19,7 +19,7 @@
     "eslint-plugin-react": "^7.10.0",
     "prettier": "^1.15.2",
     "@ckeditor/ckeditor5-dev-utils": "^25.4.5",
-    "ckeditor5": "~31.0.0",
+    "ckeditor5": "~36.0.0",
     "@ckeditor/ckeditor5-image": "~31.0.0",
     "raw-loader": "^4.0.2",
     "terser-webpack-plugin": "^5.2.0",

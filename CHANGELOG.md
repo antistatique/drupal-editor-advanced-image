@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - fix latests phpcs latests changes
 
+### Added
+- add coverage of Drupal 10.1.x
+- add coverage of Drupal 10.2.x
+
 ## [2.2.0] - 2023-10-17
 ### Added
 - CKEditor 5: Allow disabling the Balloon - Issue #3337623 by mvogel, wengerk

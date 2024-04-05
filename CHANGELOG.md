@@ -17,6 +17,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - add cpsell project words for Gitlab-CI
 - add phpstan.neon in order to ignore new static() errors
 
+### Fixed
+- fix missing force execution in in order to set attributes even when the Balloon form has still not been used - Issue #3337618 by mvogel
+
 ## [2.2.0] - 2023-10-17
 ### Added
 - CKEditor 5: Allow disabling the Balloon - Issue #3337623 by mvogel, wengerk

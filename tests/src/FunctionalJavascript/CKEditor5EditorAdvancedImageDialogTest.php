@@ -276,6 +276,39 @@ class CKEditor5EditorAdvancedImageDialogTest extends WebDriverTestBase {
   }
 
   /**
+   * Tests that EditorAdvancedImage default class feature works.
+   *
+   * The difference to testDefaultClass() is, that the Editor Advanced Image
+   * form will not be opened and saved. The default class should be applied
+   * anyway.
+   */
+  public function testDefaultClassWithoutInteraction(): void {
+    // Update text format and editor to allow editing of the class attribute via
+    // the EditorAdvancedImage plugin.
+    $editor = Editor::load('test_format');
+    $settings = $editor->getSettings();
+    $settings['plugins']['editor_advanced_image_image']['enabled_attributes'][] = 'class';
+    $settings['plugins']['editor_advanced_image_image']['default_class'] = 'img-responsive';
+    $editor->setSettings($settings)->save();
+
+    $page = $this->getSession()->getPage();
+
+    $this->drupalGet($this->testNode->toUrl('edit-form'));
+    $this->waitForEditor();
+    $assert_session = $this->assertSession();
+
+    // Confirm the images widget exists.
+    $this->assertNotEmpty($image_block = $assert_session->waitForElementVisible('css', ".ck-content .ck-widget.image"));
+
+    // Open the Image balloon.
+    $image_block->click();
+
+    // Save the node and confirm that the attribute text is retained.
+    $page->pressButton('Save');
+    $this->assertNotEmpty($assert_session->waitForElement('css', 'img[class="img-responsive"]'));
+  }
+
+  /**
    * A collection of attribute to enable and ensure works when enabled.
    */
   public function providerAttributesTest(): iterable {
@@ -320,7 +353,7 @@ class CKEditor5EditorAdvancedImageDialogTest extends WebDriverTestBase {
 
     // Ensure the Default Class has been applied directly when the image has
     // been added to CKEditor 5.
-    $this->assertEmpty($assert_session->waitForElement('css', 'img[class="img-responsive"]'));
+    $this->assertNotEmpty($assert_session->waitForElement('css', 'img[class="img-responsive"]'));
 
     // Ensure that the Editor Advanced Image button is not visible on the Image
     // Balloon.
@@ -329,7 +362,7 @@ class CKEditor5EditorAdvancedImageDialogTest extends WebDriverTestBase {
 
     // Save the node and confirm that the attribute text is retained.
     $page->pressButton('Save');
-    $this->assertEmpty($assert_session->waitForElement('css', 'img[class="img-responsive"]'));
+    $this->assertNotEmpty($assert_session->waitForElement('css', 'img[class="img-responsive"]'));
   }
 
 }

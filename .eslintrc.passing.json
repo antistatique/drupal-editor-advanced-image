@@ -1,5 +1,5 @@
 {
-  "extends": "./.eslintrc.json",
+  "extends": "./.eslintrc.local.json",
   "rules": {
     "no-shadow": "off",
     "no-new": "off",

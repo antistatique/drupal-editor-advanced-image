@@ -42,7 +42,7 @@ export default class EditorAdvancedImageEditing extends Plugin {
     // Declare our command.
     editor.commands.add(
       "EditorAdvancedImageCmd",
-      new EditorAdvancedImageCommand(editor, options)
+      new EditorAdvancedImageCommand(editor, options),
     );
   }
 
@@ -56,13 +56,13 @@ export default class EditorAdvancedImageEditing extends Plugin {
 
     if (schema.isRegistered("imageInline")) {
       schema.extend("imageInline", {
-        allowAttributes: ["title", "class", "id"]
+        allowAttributes: ["title", "class", "id"],
       });
     }
 
     if (schema.isRegistered("imageBlock")) {
       schema.extend("imageBlock", {
-        allowAttributes: ["title", "class", "id"]
+        allowAttributes: ["title", "class", "id"],
       });
     }
   }
@@ -76,15 +76,15 @@ export default class EditorAdvancedImageEditing extends Plugin {
     // editor. These trigger when an editor instance loads.
     conversion.for("upcast").attributeToAttribute({
       model: "title",
-      view: "title"
+      view: "title",
     });
     conversion.for("upcast").attributeToAttribute({
       model: "id",
-      view: "id"
+      view: "id",
     });
     conversion.for("upcast").attributeToAttribute({
       model: "class",
-      view: "class"
+      view: "class",
     });
 
     // Data Downcast Converters: converts stored model data into HTML.
@@ -124,20 +124,20 @@ function modelAttributeToDataAttribute() {
 
     const viewElement = conversionApi.mapper.toViewElement(item);
     const imageInFigure = Array.from(viewElement.getChildren()).find(
-      child => child.name === "img"
+      (child) => child.name === "img",
     );
 
     writer.setAttribute(
       attributeKey,
       data.attributeNewValue,
-      imageInFigure || viewElement
+      imageInFigure || viewElement,
     );
   }
 
   /**
    * When the callback must be called.
    */
-  return dispatcher => {
+  return (dispatcher) => {
     dispatcher.on("attribute:title", converter);
     dispatcher.on("attribute:class", converter);
     dispatcher.on("attribute:id", converter);

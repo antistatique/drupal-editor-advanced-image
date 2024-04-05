@@ -11,7 +11,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - add coverage of Drupal 10.1.x
 - add coverage of Drupal 10.2.x
-- add Drupal GitlabCI 
+- add Drupal GitlabCI
+- add eslitrc.json from Drupal Core
 
 ## [2.2.0] - 2023-10-17
 ### Added

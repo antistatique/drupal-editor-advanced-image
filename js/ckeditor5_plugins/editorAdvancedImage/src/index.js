@@ -27,7 +27,7 @@ class EditorAdvancedImage extends Plugin {
     return [
       EditorAdvancedImageEditing,
       EditorAdvancedImageUi,
-      EditorAdvancedImageCommand
+      EditorAdvancedImageCommand,
     ];
   }
 
@@ -40,5 +40,5 @@ class EditorAdvancedImage extends Plugin {
 }
 
 export default {
-  EditorAdvancedImage
+  EditorAdvancedImage,
 };

@@ -12,13 +12,13 @@
 
 /* global CKEDITOR */
 
-(function(CKEDITOR) {
+(function (CKEDITOR) {
   "use strict";
 
   CKEDITOR.plugins.add("editoradvancedimage", {
     requires: "drupalimage",
 
-    beforeInit: function(editor) {
+    beforeInit: function (editor) {
       // Add CSS file.
       editor.addContentsCss(this.path + "css/ckeditor.editoradvancedimage.css");
 
@@ -31,7 +31,7 @@
       // title, class and id attributes.
       editor.on(
         "widgetDefinition",
-        function(event) {
+        function (event) {
           var widgetDefinition = event.data;
           if (widgetDefinition.name !== "image") {
             return;
@@ -43,14 +43,14 @@
           CKEDITOR.tools.extend(widgetDefinition._mapDataToDialog, {
             title: "title",
             class: "class",
-            id: "id"
+            id: "id",
           });
 
           // Override downcast(): since we only accept <img> in our upcast method,
           // the element is already correct. We only need to update the element's
           // title attribute.
           var originalDowncast = widgetDefinition.downcast;
-          widgetDefinition.downcast = function(element) {
+          widgetDefinition.downcast = function (element) {
             var img = findElementByName(element, "img");
             originalDowncast.call(this, img);
 
@@ -91,7 +91,7 @@
           // image2 widget; we only accept an <img> tag, and that <img> tag MAY
           // have a data-entity-type and a data-entity-uuid attribute.
           var originalUpcast = widgetDefinition.upcast;
-          widgetDefinition.upcast = function(element, data) {
+          widgetDefinition.upcast = function (element, data) {
             if (element.name !== "img") {
               return;
               // Don't initialize on pasted fake objects.
@@ -128,9 +128,9 @@
         },
         null,
         null,
-        20
+        20,
       );
-    }
+    },
   });
 
   /**
@@ -153,7 +153,7 @@
     }
 
     var found = null;
-    element.forEach(function(el) {
+    element.forEach(function (el) {
       if (el.name === name) {
         found = el;
         // Stop here.

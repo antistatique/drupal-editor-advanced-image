@@ -8,7 +8,7 @@ import {
   LabelView,
   View,
   createLabeledInputText,
-  FormHeaderView
+  FormHeaderView,
 } from "ckeditor5/src/ui";
 import { KeystrokeHandler } from "ckeditor5/src/utils";
 import { icons } from "ckeditor5/src/core";
@@ -52,7 +52,7 @@ export default class EditorAdvancedImageFormView extends View {
      */
     this.classAttrInput = this._createLabeledInputView(
       "CSS classes",
-      "List of CSS classes to be added to the image, separated by spaces."
+      "List of CSS classes to be added to the image, separated by spaces.",
     );
 
     /**
@@ -62,7 +62,7 @@ export default class EditorAdvancedImageFormView extends View {
      */
     this.titleAttrInput = this._createLabeledInputView(
       "Title",
-      "Populates the title attribute of the image, usually shown as a small tooltip on hover."
+      "Populates the title attribute of the image, usually shown as a small tooltip on hover.",
     );
 
     /**
@@ -72,7 +72,7 @@ export default class EditorAdvancedImageFormView extends View {
      */
     this.idAttrInput = this._createLabeledInputView(
       "ID",
-      "Usually used to linking to this content using a https://en.wikipedia.org/wiki/Fragment_identifier. Must be unique on the page."
+      "Usually used to linking to this content using a https://en.wikipedia.org/wiki/Fragment_identifier. Must be unique on the page.",
     );
 
     /**
@@ -84,7 +84,7 @@ export default class EditorAdvancedImageFormView extends View {
       Drupal.t("Save"),
       icons.check,
       "ck-button-save",
-      "save"
+      "save",
     );
 
     /**
@@ -96,20 +96,20 @@ export default class EditorAdvancedImageFormView extends View {
       Drupal.t("Cancel"),
       icons.cancel,
       "ck-button-cancel",
-      "cancel"
+      "cancel",
     );
 
     // Form header.
     this.children.add(
       new FormHeaderView(locale, {
-        label: this.t("Editor Advanced Image")
-      })
+        label: this.t("Editor Advanced Image"),
+      }),
     );
 
     // Properties Form Panel (ID, Class, Title) Input(s) row.
     // ------------------------------------------------
     this.children.add(
-      this._createRowView([this._createLabelView("Properties")])
+      this._createRowView([this._createLabelView("Properties")]),
     );
 
     // Add each inputs only if the attribute is allowed.
@@ -133,8 +133,8 @@ export default class EditorAdvancedImageFormView extends View {
     this.children.add(
       this._createRowView(
         [this.saveButtonView, this.cancelButtonView],
-        ["ck-table-form__action-row"]
-      )
+        ["ck-table-form__action-row"],
+      ),
     );
 
     this.setTemplate({
@@ -142,9 +142,9 @@ export default class EditorAdvancedImageFormView extends View {
       attributes: {
         class: ["ck", "ck-form", "ck-editor-advanced-image"],
         // https://github.com/ckeditor/ckeditor5-link/issues/90 & https://github.com/ckeditor/ckeditor5-image/issues/40
-        tabindex: "-1"
+        tabindex: "-1",
       },
-      children: this.children
+      children: this.children,
     });
   }
 
@@ -193,13 +193,13 @@ export default class EditorAdvancedImageFormView extends View {
     button.set({
       label,
       icon,
-      withText: true
+      withText: true,
     });
 
     button.extendTemplate({
       attributes: {
-        class: className
-      }
+        class: className,
+      },
     });
 
     if (eventName) {
@@ -220,7 +220,7 @@ export default class EditorAdvancedImageFormView extends View {
   _createLabeledInputView(label, infoText) {
     const labeledInput = new LabeledFieldView(
       this.locale,
-      createLabeledInputText
+      createLabeledInputText,
     );
 
     labeledInput.label = Drupal.t(label);
@@ -242,9 +242,9 @@ export default class EditorAdvancedImageFormView extends View {
     view.setTemplate({
       tag: "div",
       attributes: {
-        class: ["ck", "ck-form__row", classes !== undefined ? classes : ""]
+        class: ["ck", "ck-form__row", classes !== undefined ? classes : ""],
       },
-      children
+      children,
     });
 
     return view;

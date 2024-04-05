@@ -31,6 +31,11 @@ class CKEditor5EditorAdvancedImageEditorFormatTest extends WebDriverTestBase {
   ];
 
   /**
+   * {@inheritdoc}
+   */
+  protected $allowedElements = '<br> <p> <strong> <em> <a href>';
+
+  /**
    * The user to use during testing.
    *
    * @var \Drupal\user\UserInterface
@@ -70,9 +75,14 @@ class CKEditor5EditorAdvancedImageEditorFormatTest extends WebDriverTestBase {
             'link',
             'bold',
             'italic',
+            'sourceEditing',
           ],
         ],
-        'plugins' => [],
+        'plugins' => [
+          'ckeditor5_sourceEditing' => [
+            'allowed_tags' => [],
+          ],
+        ],
       ],
       'image_upload' => [
         'status' => FALSE,
@@ -168,12 +178,24 @@ class CKEditor5EditorAdvancedImageEditorFormatTest extends WebDriverTestBase {
 
     // Enable the image toolbar item.
     // Enabling image uploads adds <img> with several attributes allowed.
+    $this->assertNotEmpty($assert_session->waitForElement('css', '.ckeditor5-toolbar-item-drupalInsertImage'));
     $this->triggerKeyUp('.ckeditor5-toolbar-item-drupalInsertImage', 'ArrowDown');
     $assert_session->assertWaitOnAjaxRequest();
+
+    // The image upload settings form should now be present.
+    $assert_session->elementExists('css', '[data-drupal-selector="edit-editor-settings-plugins-ckeditor5-image"]');
+
+    $this->assertNotEmpty($assert_session->waitForElement('css', '.ckeditor5-toolbar-active .ckeditor5-toolbar-item-drupalInsertImage'));
+
+    // The image insert plugin is enabled and inserting <img> is allowed.
+    $this->assertEquals($this->allowedElements . ' <img src alt height width class>', $allowed_html_field->getValue());
+
+    $page->clickLink('Image');
+    $assert_session->waitForText('Enable image uploads');
+
     $this->assertTrue($page->hasUncheckedField('editor[settings][plugins][ckeditor5_image][status]'));
     $page->checkField('editor[settings][plugins][ckeditor5_image][status]');
     $assert_session->assertWaitOnAjaxRequest();
-
     $allowed_html_field = $assert_session->fieldExists('filters[filter_html][settings][allowed_html]');
 
     // Assert that image uploads are enabled initially.

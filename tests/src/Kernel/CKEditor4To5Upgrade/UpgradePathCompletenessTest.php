@@ -16,13 +16,18 @@ if (class_exists(Real::class)) {
      * Tests that the test-only CKEditor 4 module does not have an upgrade path.
      */
     public function testButtonsWithTestOnlyModule(): void {
+      // @phpstan-ignore-next-line
       $this->enableModules(['ckeditor_test']);
+      // @phpstan-ignore-next-line
       $this->cke4PluginManager = $this->container->get('plugin.manager.ckeditor.plugin');
 
+      // @phpstan-ignore-next-line
       $this->expectException(\OutOfBoundsException::class);
 
       // Since Drupal 10.0.x the Plugin name has changed LlamaCSS vs Llama.
+      // @phpstan-ignore-next-line
       $this->expectExceptionMessageMatches('/^No upgrade path found for the "Llama(CSS)?" button\.$/');
+      // @phpstan-ignore-next-line
       $this->testButtons();
     }
 

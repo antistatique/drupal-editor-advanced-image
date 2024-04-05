@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - add coverage of Drupal 10.2.x
 - add Drupal GitlabCI
 - add eslitrc.json from Drupal Core
+- add styleintrc.json from Drupal core
 
 ## [2.2.0] - 2023-10-17
 ### Added

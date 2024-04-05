@@ -12,6 +12,16 @@ jobs:
       - name: Run ESLint
         run: yarn run lint:js-passing
 
+  stylelint:
+    name: stylelint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install modules
+        run: yarn
+      - name: Run ESLint
+        run: yarn run lint:css
+
   prettier:
     name: prettier
     runs-on: ubuntu-latest

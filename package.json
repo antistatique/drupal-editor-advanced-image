@@ -6,6 +6,8 @@
     "lint:js": "node ./node_modules/eslint/bin/eslint.js --config=.eslintrc.local.json .",
     "lint:js-passing": "node ./node_modules/eslint/bin/eslint.js --quiet --config=.eslintrc.passing.json .",
     "lint:js-stats": "node ./node_modules/eslint/bin/eslint.js --format=./scripts/js/eslint-stats-by-type.js .",
+    "lint:css": "stylelint \"css/**/*.css\"",
+    "lint:css-checkstyle": "stylelint \"**/*.css\" --custom-formatter ./node_modules/stylelint-checkstyle-formatter/index.js",
     "prettier": "prettier --write \"./**/*.js\"",
     "prettier-check": "prettier --check \"./**/*.js\""
   },
@@ -22,6 +24,11 @@
     "eslint-plugin-yml": "^1.14.0",
     "prettier": "^3.2.5",
     "raw-loader": "^4.0.2",
+    "stylelint": "^16.3.1",
+    "stylelint-checkstyle-formatter": "^0.1.2",
+    "stylelint-config-standard": "^36.0.0",
+    "stylelint-formatter-gitlab": "^1.0.2",
+    "stylelint-order": "^6.0.4",
     "terser-webpack-plugin": "^5.2.0",
     "webpack": "^5.51.1",
     "webpack-cli": "^4.4.0"

@@ -70,6 +70,15 @@ You need to run `yarn` before using ESLint. Then run the command:
   yarn run lint:js-passing
   ```
 
+## 🚔 Check Styles best practices
+
+You need to run `yarn` before using Stylelint. Then run the commmand:
+
+  ```
+  // Run Stylelint
+  yarn lint:css
+  ```
+
 ## 🚔 Check Drupal coding standards & Drupal best practices
 
 During Docker build, the following Static Analyzers will be installed on the Docker `drupal` via Composer:

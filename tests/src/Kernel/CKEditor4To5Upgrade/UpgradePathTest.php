@@ -1,6 +1,6 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace Drupal\Tests\editor_advanced_image\Kernel\CKEditor4To5Upgrade;
 

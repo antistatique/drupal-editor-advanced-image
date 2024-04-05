@@ -1,8 +1,9 @@
 {
   "name": "drupal/editor_advanced_image",
-  "description": "Enhances the inline-image Dialog in D8 CKEditor.",
+  "description": "Enhances the inline-image Dialog in Drupal CKEditor.",
   "type": "drupal-module",
-  "homepage": "https://www.drupal.org/sandbox/wengerk/nbsp",
+  "homepage": "https://www.drupal.org/project/editor_advanced_image",
+  "minimum-stability": "dev",
   "authors": [
     {
       "name": "Antistatique",
@@ -17,12 +18,19 @@
       "role": "Author & Maintainer"
     }
   ],
+  "repositories": [
+      {
+          "type": "composer",
+          "url": "https://packages.drupal.org/8"
+      }
+  ],
   "support": {
-    "issues": "https://www.drupal.org/project/issues/nbsp"
+    "issues": "https://www.drupal.org/project/editor_advanced_image/nbsp"
   },
   "license": "GPL-2.0-or-later",
   "require-dev": {
-    "drupal/coder": "^8.3.1"
+    "drupal/coder": "^8.3.1",
+    "drupal/ckeditor": "^1.0"
   },
   "config": {
     "allow-plugins": {

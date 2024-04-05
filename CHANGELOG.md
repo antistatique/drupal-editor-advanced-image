@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - add eslitrc.json from Drupal Core
 - add styleintrc.json from Drupal core
 - add cpsell project words for Gitlab-CI
+- add phpstan.neon in order to ignore new static() errors
 
 ## [2.2.0] - 2023-10-17
 ### Added

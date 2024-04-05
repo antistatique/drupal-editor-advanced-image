@@ -35,8 +35,6 @@ variables:
   OPT_IN_TEST_PREVIOUS_MINOR: '1'
   # The 4.x branch of the CDN module requires PHP >=8.1, rather than core's >=7.4.
   CORE_PREVIOUS_PHP_MIN: '8.1'
-  # Opt in to testing $CORE_MAJOR_DEVELOPMENT (currently Drupal 11).
-  OPT_IN_TEST_NEXT_MAJOR: '1'
 
 # This module wants to strictly comply with Drupal's coding standards.
 phpcs:

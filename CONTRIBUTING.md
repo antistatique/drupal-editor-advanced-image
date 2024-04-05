@@ -72,7 +72,7 @@ You need to run `yarn` before using ESLint. Then run the command:
 
 ## 🚔 Check Styles best practices
 
-You need to run `yarn` before using Stylelint. Then run the commmand:
+You need to run `yarn` before using Stylelint. Then run the command:
 
   ```
   // Run Stylelint

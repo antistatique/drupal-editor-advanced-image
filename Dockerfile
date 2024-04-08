@@ -2,11 +2,7 @@ ARG BASE_IMAGE_TAG=10.1
 FROM wengerk/drupal-for-contrib:${BASE_IMAGE_TAG}
 
 # Disable deprecation notice as CKEditor4 module will throw an exception until we remove support of Drupal 9.
-ENV SYMFONY_DEPRECATIONS_HELPER=disabled
-
-# Install drupal/ckeditor (CKEditor 4) as we keep supporting CK4 & CK5.
-ENV COMPOSER_ALLOW_SUPERUSER=1
-RUN COMPOSER_MEMORY_LIMIT=-1 composer require "drupal/ckeditor"
+# ENV SYMFONY_DEPRECATIONS_HELPER=disabled
 
 # Register the Drupal and DrupalPractice Standard with PHPCS.
 RUN ./vendor/bin/phpcs --config-set installed_paths \

@@ -38,7 +38,7 @@ Allows to define the following attributes on an Image:
 |     9.x     |   4.x    |        8.x-2.1        |
 |     9.x     |   5.x    |        8.x-2.1        |
 |    10.x     |   4.x    |        8.x-2.1        |
-|    10.x     |   5.x    |         3.0.x         |
+|    10.x     |   5.x    |   8.x-2.1 or 3.x      |
 
 ## Dependencies
 

@@ -1,6 +1,6 @@
 # Editor Advanced Image
 
-Enhances the image Balloon in CKEditor 4 & CKEditor 5.
+Enhances the image Balloon in CKEditor 5.
 
 ## Features
 
@@ -9,17 +9,10 @@ Allows to define the following attributes on an Image:
 - class
 - id
 
-## Standard usage scenario for CKEditor 4
+## Requirements
 
-1. Install the module.
-1. Open the "Text formats and editor" admin page [/admin/config/content/formats](/admin/config/content/formats).
-
-   If the "Limit allowed HTML tags and correct faulty HTML" filter is disabled
-   you dont have anything to do with this text format.
-
-   Otherwise, add the "title", "class" and/or "id" attributes to
-   the "allowed HTML tags" field.
-   (only those whitelisted will show up in the dialog).
+- The `8.x-2.1` branch is compliant with both *ckeditor4* & *ckeditor5*
+- The `3.x` branch is compliant with *ckeditor5* only
 
 ## Standard usage scenario for CKEditor 5
 
@@ -38,9 +31,14 @@ Allows to define the following attributes on an Image:
 |     9.x     |   4.x    |        8.x-2.1        |
 |     9.x     |   5.x    |        8.x-2.1        |
 |    10.x     |   4.x    |        8.x-2.1        |
-|    10.x     |   5.x    |   8.x-2.1 or 3.x      |
+|    10.x     |   5.x    |    8.x-2.1 or 3.x     |
+|    11.x     |   5.x    |       3.x             |
 
 ## Dependencies
+
+The Drupal 11 version of Editor Advanced Image requires
+[Editor](https://www.drupal.org/project/editor) and
+[CKEditor 5](https://ckeditor.com/ckeditor-5/).
 
 The Drupal 10 version of Editor Advanced Image requires
 [Editor](https://www.drupal.org/project/editor) and

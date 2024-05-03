@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [3.0.0] - 2024-05-03
 ### Removed
 - drop support of drupal 9.x
 - drop support of CKEditor 4.x
@@ -96,7 +98,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - First draft.
 
-[Unreleased]: https://github.com/antistatique/drupal-editor-advanced-image/compare/8.x-2.3...HEAD
+[Unreleased]: https://github.com/antistatique/drupal-editor-advanced-image/compare/3.0.0...HEAD
+[3.0.0]: https://github.com/antistatique/drupal-editor-advanced-image/compare/8.x-2.3...3.0.0
 [2.3.0]: https://github.com/antistatique/drupal-editor-advanced-image/compare/8.x-2.2...8.x-2.3
 [2.2.0]: https://github.com/antistatique/drupal-editor-advanced-image/compare/8.x-2.1...8.x-2.2
 [2.1.0]: https://github.com/antistatique/drupal-editor-advanced-image/compare/8.x-2.0...8.x-2.1

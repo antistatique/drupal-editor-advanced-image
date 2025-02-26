@@ -40,7 +40,7 @@ class CKEditor5EditorAdvancedImagePluginTest extends UnitTestCase {
   /**
    * Provides a list of configs to test providerGetDynamicPluginConfig.
    */
-  public function providerGetDynamicPluginConfig(): array {
+  public static function providerGetDynamicPluginConfig(): array {
     return [
       'Default configuration' => [
         EditorAdvancedImage::DEFAULT_CONFIGURATION,
@@ -220,7 +220,7 @@ class CKEditor5EditorAdvancedImagePluginTest extends UnitTestCase {
   /**
    * Provides a list of configs to test getElementsSubset.
    */
-  public function providerGetElementsSubset(): iterable {
+  public static function providerGetElementsSubset(): iterable {
     return [
       'Default configuration' => [
         EditorAdvancedImage::DEFAULT_CONFIGURATION,
@@ -301,7 +301,7 @@ class CKEditor5EditorAdvancedImagePluginTest extends UnitTestCase {
   /**
    * Provides a list of configs to test getAllowedStringForSupportedAttribute.
    */
-  public function providerGetAllowedStringForSupportedAttribute(): iterable {
+  public static function providerGetAllowedStringForSupportedAttribute(): iterable {
     yield ['', NULL, \OutOfBoundsException::class];
     yield ['foo', NULL, \OutOfBoundsException::class];
     yield ['foo bar', NULL, \OutOfBoundsException::class];
@@ -328,7 +328,7 @@ class CKEditor5EditorAdvancedImagePluginTest extends UnitTestCase {
   /**
    * Provides a list of configs to test getAllowedHtmlForSupportedAttribute.
    */
-  public function providerGetAllowedHtmlForSupportedAttribute(): iterable {
+  public static function providerGetAllowedHtmlForSupportedAttribute(): iterable {
     yield ['', NULL, \OutOfBoundsException::class];
     yield ['foo', NULL, \OutOfBoundsException::class];
     yield ['foo bar', NULL, \OutOfBoundsException::class];

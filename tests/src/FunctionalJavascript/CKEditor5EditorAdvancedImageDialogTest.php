@@ -311,7 +311,7 @@ class CKEditor5EditorAdvancedImageDialogTest extends WebDriverTestBase {
   /**
    * A collection of attribute to enable and ensure works when enabled.
    */
-  public function providerAttributesTest(): iterable {
+  public static function providerAttributesTest(): iterable {
     return [
       '<img title>' => [
         'attribute_name' => 'title',

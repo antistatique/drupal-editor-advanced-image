@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - add official support of drupal 10.4
 - add official support of drupal 11.1
 
+### Changed
+- pass all dataprovider phpunit to static methods
+
 ## [3.0.0] - 2024-05-03
 ### Removed
 - drop support of drupal 9.x

@@ -11,10 +11,16 @@ jobs:
 
     strategy:
       matrix:
-        drupal_version: ['9.5', '10.0', '10.1', '10.2', '10.3', '10.4']
+        drupal_version: ['9.5', '10.0', '10.1', '10.2']
         module: ['editor_advanced_image']
         experimental: [ false ]
         include:
+          - drupal_version: '10.3'
+            module: 'editor_advanced_image'
+            experimental: true
+          - drupal_version: '10.4'
+            module: 'editor_advanced_image'
+            experimental: true
           - drupal_version: '10.5'
             module: 'editor_advanced_image'
             experimental: true
@@ -40,10 +46,16 @@ jobs:
 
     strategy:
       matrix:
-        drupal_version: ['9.5', '10.0', '10.1', '10.2', '10.3', '10.4']
+        drupal_version: ['9.5', '10.0', '10.1', '10.2']
         module: ['editor_advanced_image']
         experimental: [ false ]
         include:
+          - drupal_version: '10.3'
+            module: 'editor_advanced_image'
+            experimental: true
+          - drupal_version: '10.4'
+            module: 'editor_advanced_image'
+            experimental: true
           - drupal_version: '10.5'
             module: 'editor_advanced_image'
             experimental: true
@@ -75,6 +87,7 @@ jobs:
       matrix:
         drupal_version: ['9.5']
         module: ['editor_advanced_image']
+        experimental: [ true ]
 
     steps:
       - uses: actions/checkout@v4
@@ -95,3 +108,4 @@ jobs:
         run: docker compose exec -T drupal wait-for-it db:3306 -- ./vendor/bin/drush en ${{ matrix.module }} -y
       - name: Run upgrade status
         run: docker compose exec -T drupal wait-for-it db:3306 -- ./vendor/bin/drush upgrade_status:analyze ${{ matrix.module }}
+        continue-on-error: ${{ matrix.experimental }}

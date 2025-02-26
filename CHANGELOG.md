@@ -12,6 +12,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - pass all dataprovider phpunit to static methods
 
+### Removed
+- remove legacy version annotation on docker-compose.yml
+
 ## [3.0.0] - 2024-05-03
 ### Removed
 - drop support of drupal 9.x

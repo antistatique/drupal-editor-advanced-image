@@ -29,12 +29,26 @@ include:
 # Docs at https://git.drupalcode.org/project/gitlab_templates/-/blob/1.0.x/includes/include.drupalci.variables.yml
 ################
 variables:
-  # Opt in to testing current minor against max supported PHP version.
-  OPT_IN_TEST_MAX_PHP: '1'
-  # Opt in to testing previous (Drupal 10.1.x).
-  OPT_IN_TEST_PREVIOUS_MINOR: '1'
-  # The 4.x branch of the CDN module requires PHP >=8.1, rather than core's >=7.4.
+  # The 2.x branch of the module should run on 9.5 to maximum 10.2 but not upper.
+  CORE_PREVIOUS_STABLE: '10.0'
+  CORE_STABLE: '10.1'
+  CORE_NEXT_MINOR: '10.2'
+  CORE_SECURITY_PREVIOUS_MINOR: '10.1'
+  # The 2.x branch of the module requires PHP >=8.1, rather than core's >=7.4.
   CORE_PREVIOUS_PHP_MIN: '8.1'
+
+  # Opt-in to testing previous Minor (Drupal 10.x).
+  OPT_IN_TEST_CURRENT: '1'
+  # Opt-out to testing current minor against max supported PHP version.
+  OPT_IN_TEST_MAX_PHP: '0'
+  # Opt-in to testing previous (Drupal 10.3.x).
+  OPT_IN_TEST_PREVIOUS_MINOR: '1'
+  # Opt-in to testing previous Major (Drupal 9.5.x).
+  OPT_IN_TEST_PREVIOUS_MAJOR: '1'
+  # Opt-int of testing next Minor (Drupal 10.x).
+  OPT_IN_TEST_NEXT_MINOR: '1'
+  # Opt-out of testing next Major (Drupal 11.x).
+  OPT_IN_TEST_NEXT_MAJOR: '0'
 
 # This module wants to strictly comply with Drupal's coding standards.
 phpcs:

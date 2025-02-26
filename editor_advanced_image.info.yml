@@ -1,8 +1,11 @@
 name: 'Editor Advanced Image'
 type: module
 description: 'Enhances the inline-image Dialog in D8 CKEditor.'
-core_version_requirement: ^9.5 || ^10
+core_version_requirement: ^9.5 || ^10.3
 package: CKEditor
 
 dependencies:
   - drupal:editor
+
+test_dependencies:
+  - drupal:ckeditor

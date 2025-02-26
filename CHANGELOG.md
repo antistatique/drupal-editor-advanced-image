@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added
 - fix support from 9.5.x to 10.2 maximum
+- add official stable support for drupal 10.3
+- add official stable support for drupal 10.4
 
 ### Removed
 - remove legacy version annotation on docker-compose.yml

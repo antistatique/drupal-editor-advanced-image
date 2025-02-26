@@ -11,16 +11,10 @@ jobs:
 
     strategy:
       matrix:
-        drupal_version: ['9.5', '10.0', '10.1', '10.2']
+        drupal_version: ['9.5', '10.3', '10.4']
         module: ['editor_advanced_image']
         experimental: [ false ]
         include:
-          - drupal_version: '10.3'
-            module: 'editor_advanced_image'
-            experimental: true
-          - drupal_version: '10.4'
-            module: 'editor_advanced_image'
-            experimental: true
           - drupal_version: '10.5'
             module: 'editor_advanced_image'
             experimental: true
@@ -46,16 +40,10 @@ jobs:
 
     strategy:
       matrix:
-        drupal_version: ['9.5', '10.0', '10.1', '10.2']
+        drupal_version: ['9.5', '10.3', '10.4']
         module: ['editor_advanced_image']
         experimental: [ false ]
         include:
-          - drupal_version: '10.3'
-            module: 'editor_advanced_image'
-            experimental: true
-          - drupal_version: '10.4'
-            module: 'editor_advanced_image'
-            experimental: true
           - drupal_version: '10.5'
             module: 'editor_advanced_image'
             experimental: true
@@ -85,7 +73,7 @@ jobs:
 
     strategy:
       matrix:
-        drupal_version: ['9.5']
+        drupal_version: ['10.3']
         module: ['editor_advanced_image']
         experimental: [ true ]
 

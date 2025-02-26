@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 - pass all dataprovider phpunit to static methods
+- update Docker MariaDB 10.3 -> 10.6
 
 ### Removed
 - remove legacy version annotation on docker-compose.yml

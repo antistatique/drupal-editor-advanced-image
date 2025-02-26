@@ -34,7 +34,7 @@ variables:
   # Opt in to testing previous & next minor (Drupal 10.0.x and 10.2.x).
   OPT_IN_TEST_PREVIOUS_MINOR: '1'
   OPT_IN_TEST_NEXT_MINOR: '1'
-  # The 3.x branch of the CDN module requires Drupal 10.x minimum.
+  # The 3.x branch of the module requires Drupal 10.x minimum.
   CORE_PREVIOUS_PHP_MIN: '8.1'
   # Opt in to testing $CORE_MAJOR_DEVELOPMENT (currently Drupal 11).
   OPT_IN_TEST_NEXT_MAJOR: '1'

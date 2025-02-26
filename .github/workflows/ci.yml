@@ -11,8 +11,16 @@ jobs:
 
     strategy:
       matrix:
-        drupal_version: ['10.0', '10.1', '10.2', '11.0']
+        drupal_version: ['10.0', '10.1', '10.2', '10.3', '10.4', '11.0', '11.1']
         module: ['editor_advanced_image']
+        experimental: [ false ]
+        include:
+          - drupal_version: '10.5'
+            module: 'editor_advanced_image'
+            experimental: true
+          - drupal_version: '11.2'
+            module: 'editor_advanced_image'
+            experimental: true
 
     steps:
       - uses: actions/checkout@v4
@@ -34,8 +42,16 @@ jobs:
 
     strategy:
       matrix:
-        drupal_version: ['10.0', '10.1', '10.2']
+        drupal_version: ['10.0', '10.1', '10.2', '10.3', '10.4', '11.0', '11.1']
         module: ['editor_advanced_image']
+        experimental: [ false ]
+        include:
+          - drupal_version: '10.5'
+            module: 'editor_advanced_image'
+            experimental: true
+          - drupal_version: '11.2'
+            module: 'editor_advanced_image'
+            experimental: true
 
     steps:
       - uses: actions/checkout@v4
@@ -61,7 +77,7 @@ jobs:
 
     strategy:
       matrix:
-        drupal_version: ['10.2']
+        drupal_version: ['10.4']
         module: ['editor_advanced_image']
 
     steps:

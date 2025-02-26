@@ -135,7 +135,7 @@ class UpgradePathTest extends SmartDefaultSettingsTest {
   /**
    * {@inheritdoc}
    */
-  public function provider() {
+  public static function provider() {
     $expected_ckeditor5_toolbar = [
       'items' => [
         'bold',

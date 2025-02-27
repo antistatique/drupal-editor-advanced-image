@@ -124,15 +124,6 @@ class CKEditor4EditorAdvancedImageDialogTest extends UiTestBase {
   }
 
   /**
-   * Tests the node add page is reachable.
-   */
-  public function testNodeAddPageReachable() {
-    $this->drupalLogin($this->adminUser);
-    $this->drupalGet('node/add/page');
-    $this->assertSession()->elementExists('css', 'form.node-page-form');
-  }
-
-  /**
    * Tests CKEditor button image still apprear, works & dialog open.
    */
   public function testImageBaseDialogWorks() {

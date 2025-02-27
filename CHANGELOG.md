@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
-- fix support from 9.5.x to 10.2 maximum
+- fix support (tests fails) for 9.5.x to 10.2
 - add official stable support for drupal 10.3
 - add official stable support for drupal 10.4
 
@@ -14,7 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - remove legacy version annotation on docker-compose.yml
 
 ### Changed
-- change gitlab-ci in order to run tests for Drupal 9.5.x & 10.2.x but not for Drupal 10.3+
+- change gitlab-ci in order to run tests for Drupal 9.5.x & 10x but not for Drupal 11.x
 
 ## [2.3.0] - 2024-04-08
 ### Fixed

@@ -45,7 +45,7 @@ variables:
   OPT_IN_TEST_PREVIOUS_MINOR: '1'
   # Opt-in to testing previous Major (Drupal 9.5.x).
   OPT_IN_TEST_PREVIOUS_MAJOR: '1'
-  # Opt-int of testing next Minor (Drupal 10.5).
+  # Opt-out of testing next Minor (Drupal 10.5).
   OPT_IN_TEST_NEXT_MINOR: '0'
   # Opt-out of testing next Major (Drupal 11.x).
   OPT_IN_TEST_NEXT_MAJOR: '0'

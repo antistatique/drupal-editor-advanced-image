@@ -22,6 +22,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - fix attributs removed when input field is cleared - #3512964
 
+### Security
+- upgrade javascript dependencies
+
 ## [3.0.0] - 2024-05-03
 ### Removed
 - drop support of drupal 9.x

@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\Tests\nbsp\FunctionalJavascript;
+namespace Drupal\Tests\editor_advanced_image\FunctionalJavascript;
 
 use Drupal\editor\Entity\Editor;
 use Drupal\file\Entity\File;

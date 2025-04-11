@@ -15,6 +15,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 - remove legacy version annotation on docker-compose.yml
+- drop coverage of Drupal 10.0.x
+- drop coverage of Drupal 10.1.x
+- drop coverage of Drupal 10.2.x
 
 ### Fixed
 - fix attributs removed when input field is cleared - #3512964

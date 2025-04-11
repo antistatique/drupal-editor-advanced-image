@@ -211,6 +211,16 @@ class CKEditor5EditorAdvancedImageDialogTest extends WebDriverTestBase {
     $balloon->hasField($expected_input_label);
     $eai_input = $page->find('css', '.ck-balloon-panel .ck-editor-advanced-image input[type=text]');
     self::assertSame("foo-bar-{$attribute_name}", $eai_input->getValue());
+
+    // Clear the input field and save the changes in the balloon.
+    $eai_input->setValue('');
+    $this->assertNotEmpty($save_button = $this->getBalloonButton('Save'));
+    $save_button->click();
+
+    // Save the node and verify that the attribute value has been removed.
+    $page->pressButton('Save');
+    $imgElement = $assert_session->waitForElement('css', "img[{$attribute_name}]");
+    $this->assertEmpty($imgElement->getAttribute($attribute_name), "The attribute {$attribute_name} should be removed but {$imgElement->getAttribute($attribute_name)} founded.");
   }
 
   /**

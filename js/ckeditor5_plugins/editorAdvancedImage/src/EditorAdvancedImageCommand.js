@@ -50,14 +50,6 @@ export default class EditorAdvancedImageCommand extends Command {
       return;
     }
 
-    // Set the default class configured on the Drupal Editor Plugin.
-    if (
-      this.options !== undefined &&
-      this.options.defaults.class !== undefined
-    ) {
-      this.attributes.class = this.options.defaults.class;
-    }
-
     // Store the title attribute value when on an image element.
     if (element.hasAttribute("title")) {
       this.attributes.title = element.getAttribute("title");
@@ -71,6 +63,15 @@ export default class EditorAdvancedImageCommand extends Command {
     // Store the id attribute value when on an image element.
     if (element.hasAttribute("id")) {
       this.attributes.id = element.getAttribute("id");
+    }
+
+    // Set the default class configured on the Drupal Editor Plugin.
+    if (
+      this.attributes.class === false &&
+      this.options !== undefined &&
+      this.options.defaults.class !== undefined
+    ) {
+      this.attributes.class = this.options.defaults.class;
     }
 
     // Force an execution at refresh time in order to set attributes even when the Balloon form has still not been used.
@@ -88,19 +89,19 @@ export default class EditorAdvancedImageCommand extends Command {
       model.document.selection,
     );
 
-    if (attributes.title) {
+    if (attributes.title !== false) {
       model.change((writer) =>
         writer.setAttribute("title", attributes.title, imageElement),
       );
     }
 
-    if (attributes.id) {
+    if (attributes.id !== false) {
       model.change((writer) =>
         writer.setAttribute("id", attributes.id, imageElement),
       );
     }
 
-    if (attributes.class) {
+    if (attributes.class !== false) {
       model.change((writer) =>
         writer.setAttribute("class", attributes.class, imageElement),
       );

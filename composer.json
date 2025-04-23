@@ -3,7 +3,6 @@
   "description": "Enhances the inline-image Dialog in Drupal CKEditor.",
   "type": "drupal-module",
   "homepage": "https://www.drupal.org/project/editor_advanced_image",
-  "minimum-stability": "dev",
   "authors": [
     {
       "name": "Antistatique",
@@ -29,7 +28,7 @@
   },
   "license": "GPL-2.0-or-later",
   "require-dev": {
-    "drupal/coder": "^8.3.1"
+    "drupal/coder": "^8.3"
   },
   "config": {
     "allow-plugins": {

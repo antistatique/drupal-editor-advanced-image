@@ -6,7 +6,10 @@
   <arg name="basepath" value="."/>
   <arg name="cache" value=".phpcs-cache"/>
   <arg name="colors"/>
-  <arg name="extensions" value="php,module,inc,install,test,profile,theme,css,info,txt"/>
+  <arg name="extensions" value="php,inc,module,install,info,test,profile,theme"/>
+
+  <!-- Set up ignores. -->
+  <arg name="ignore" value="*.js,*.css"/>
 
   <exclude-pattern>*\.(md|info\.yml)$</exclude-pattern>>
   <exclude-pattern>*/vendor/*</exclude-pattern>>
@@ -15,4 +18,3 @@
   <rule ref="./vendor/drupal/coder/coder_sniffer/Drupal"/>
   <rule ref="./vendor/drupal/coder/coder_sniffer/DrupalPractice"/>
 </ruleset>
-

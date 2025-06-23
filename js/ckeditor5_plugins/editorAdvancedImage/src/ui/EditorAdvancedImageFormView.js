@@ -11,8 +11,7 @@ import {
   FormHeaderView,
 } from "ckeditor5/src/ui";
 import { KeystrokeHandler } from "ckeditor5/src/utils";
-import { icons } from "ckeditor5/src/core";
-
+import { IconCheck, IconCancel } from 'ckeditor5/src/icons';
 /**
  * A class rendering Editor Advanced Image form view.
  *
@@ -82,7 +81,7 @@ export default class EditorAdvancedImageFormView extends View {
      */
     this.saveButtonView = this._createButton(
       Drupal.t("Save"),
-      icons.check,
+      IconCheck,
       "ck-button-save",
       "save",
     );
@@ -94,7 +93,7 @@ export default class EditorAdvancedImageFormView extends View {
      */
     this.cancelButtonView = this._createButton(
       Drupal.t("Cancel"),
-      icons.cancel,
+      IconCancel,
       "ck-button-cancel",
       "cancel",
     );

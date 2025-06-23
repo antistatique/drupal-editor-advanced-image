@@ -2,7 +2,7 @@
  * @module editor_advanced_image/editorAdvancedImage/EditorAdvancedImageUI
  */
 
-import { Plugin, icons } from "ckeditor5/src/core";
+import { Plugin } from "ckeditor5/src/core";
 import {
   ButtonView,
   ContextualBalloon,
@@ -12,6 +12,8 @@ import {
 import { getBalloonPositionData } from "@ckeditor/ckeditor5-image/src/image/ui/utils";
 
 import EditorAdvancedImageFormView from "./ui/EditorAdvancedImageFormView";
+
+import { IconThreeVerticalDots } from 'ckeditor5/src/icons';
 
 /**
  * The Editor Advanced Image UI plugin.
@@ -80,7 +82,7 @@ export default class EditorAdvancedImageUI extends Plugin {
 
       view.set({
         label: Drupal.t("Editor Advanced Image"),
-        icon: icons.threeVerticalDots,
+        icon: IconThreeVerticalDots,
         tooltip: true,
       });
 

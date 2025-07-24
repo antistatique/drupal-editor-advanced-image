@@ -13,7 +13,7 @@ import { getBalloonPositionData } from "@ckeditor/ckeditor5-image/src/image/ui/u
 
 import EditorAdvancedImageFormView from "./ui/EditorAdvancedImageFormView";
 
-import { IconThreeVerticalDots } from 'ckeditor5/src/icons';
+import { IconThreeVerticalDots } from "ckeditor5/src/icons";
 
 /**
  * The Editor Advanced Image UI plugin.

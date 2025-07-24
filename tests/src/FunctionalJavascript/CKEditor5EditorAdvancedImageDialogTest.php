@@ -325,15 +325,15 @@ class CKEditor5EditorAdvancedImageDialogTest extends WebDriverTestBase {
     return [
       '<img title>' => [
         'attribute_name' => 'title',
-        'input_label' => 'Title',
+        'expected_input_label' => 'Title',
       ],
       '<img class>' => [
         'attribute_name' => 'class',
-        'input_label' => 'CSS classes',
+        'expected_input_label' => 'CSS classes',
       ],
       '<img id>' => [
         'attribute_name' => 'id',
-        'input_label' => 'ID',
+        'expected_input_label' => 'ID',
       ],
     ];
   }

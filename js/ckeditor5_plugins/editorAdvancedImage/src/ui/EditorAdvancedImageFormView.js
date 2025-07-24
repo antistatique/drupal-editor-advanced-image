@@ -12,6 +12,7 @@ import {
 } from "ckeditor5/src/ui";
 import { KeystrokeHandler } from "ckeditor5/src/utils";
 import { IconCheck, IconCancel } from 'ckeditor5/src/icons';
+
 /**
  * A class rendering Editor Advanced Image form view.
  *

@@ -20,7 +20,7 @@ Allows to define the following attributes on an Image:
 1. Open the "Text formats and editor" admin page [/admin/config/content/formats](/admin/config/content/formats).
 
     Use the "Editor Advanced Image" configuration form to enable any attributes.
-   Only those whitelisted here will be visible in CKEditor 5 Balloon.
+   Only those allowlisted here will be visible in CKEditor 5 Balloon.
 
 ## Which version should I use?
 

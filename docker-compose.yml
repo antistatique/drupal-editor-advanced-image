@@ -34,5 +34,6 @@ services:
       - chromedriver
       - '--log-path=/tmp/chromedriver.log'
       - '--verbose'
+      # cspell:ignore whitelisted
       - '--whitelisted-ips='
       - '--allowed-origins=*'

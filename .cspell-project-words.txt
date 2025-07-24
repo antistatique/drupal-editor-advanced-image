@@ -37,3 +37,5 @@ viewcollection
 visibilit
 wapmorgan
 wengerk
+imagetextalternative
+interactable

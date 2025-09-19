@@ -48,4 +48,6 @@ phpcs:
 # Require stylelint checks to pass.
 ################
 stylelint:
+  before_script:
+    - rm $DRUPAL_PROJECT_FOLDER/.stylelintrc.json
   allow_failure: false

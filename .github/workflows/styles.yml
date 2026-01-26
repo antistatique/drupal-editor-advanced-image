@@ -6,7 +6,7 @@ jobs:
     name: eslint
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: Install modules
         run: yarn
       - name: Run ESLint
@@ -16,7 +16,7 @@ jobs:
     name: stylelint
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: Install modules
         run: yarn
       - name: Run ESLint
@@ -26,7 +26,7 @@ jobs:
     name: prettier
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - name: Install modules
         run: yarn
       - name: Run Prettier
@@ -42,7 +42,7 @@ jobs:
           php-version: '8.1'
           extensions: mbstring, intl, gd, xml, dom, json, fileinfo, curl, zip, iconv
           tools: cs2pr, composer:v2
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - run: composer install --prefer-dist
       - run: ./vendor/bin/phpcs ./ --report=checkstyle | cs2pr
 
@@ -56,7 +56,7 @@ jobs:
           php-version: '8.1'
           extensions: mbstring, intl, gd, xml, dom, json, fileinfo, curl, zip, iconv
           tools: cs2pr, composer:v2, phpmd
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - run: composer install --prefer-dist
       - run: phpmd ./ text ./phpmd.xml --suffixes php,module,inc,install,test,profile,theme,css,info,txt --exclude *Test.php,*vendor/*
 
@@ -70,7 +70,7 @@ jobs:
           php-version: '8.1'
           extensions: mbstring, intl, gd, xml, dom, json, fileinfo, curl, zip, iconv
           tools: cs2pr, composer:v2, phpcpd
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - run: composer install --prefer-dist
       - run: phpcpd ./src --suffix .php --suffix .module --suffix .inc --suffix .install --suffix .test --suffix .profile --suffix .theme --suffix .css --suffix .info --suffix .txt --exclude *.md --exclude *.info.yml --exclude tests --exclude vendor/
 
@@ -78,7 +78,7 @@ jobs:
     name: PhpDeprecationDetector (phpdd)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - run: docker compose -f docker-compose.yml pull --include-deps drupal
       - name: Build the docker compose stack
         run: docker compose -f docker-compose.yml build drupal

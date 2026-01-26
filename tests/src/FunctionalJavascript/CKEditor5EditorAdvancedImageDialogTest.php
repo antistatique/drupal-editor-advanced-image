@@ -203,7 +203,7 @@ class CKEditor5EditorAdvancedImageDialogTest extends WebDriverTestBase {
     $this->drupalGet($this->testNode->toUrl('edit-form'));
     $this->waitForEditor();
     $assert_session = $this->assertSession();
-    $img = $assert_session->waitForElementVisible('css', '.ck-content img', 1000);
+    $img = $assert_session->waitForElementVisible('css', '.ck-widget.image', 1000);
     $img->click();
     $eai_button = $this->getBalloonButton('Editor Advanced Image');
     $eai_button->click();

@@ -30,7 +30,7 @@
     "stylelint-formatter-gitlab": "^1.0.2",
     "stylelint-order": "^6.0.4",
     "terser-webpack-plugin": "^5.2.0",
-    "webpack": "^5.51.1",
+    "webpack": "^5.104.1",
     "webpack-cli": "^4.4.0"
   }
 }

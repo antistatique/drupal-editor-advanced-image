@@ -16,10 +16,10 @@ jobs:
         experimental: [ false ]
 #         include:
 #           - drupal_version: '10.6'
-#             module: 'loco_translate'
+#             module: 'editor_advanced_image'
 #             experimental: true
 #           - drupal_version: '11.4'
-#             module: 'loco_translate'
+#             module: 'editor_advanced_image'
 #             experimental: true
 
     steps:
@@ -48,10 +48,10 @@ jobs:
         experimental: [ false ]
 #         include:
 #           - drupal_version: '10.6'
-#             module: 'loco_translate'
+#             module: 'editor_advanced_image'
 #             experimental: true
 #           - drupal_version: '11.4'
-#             module: 'loco_translate'
+#             module: 'editor_advanced_image'
 #             experimental: true
 
     steps:

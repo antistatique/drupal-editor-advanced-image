@@ -5,7 +5,6 @@
 import { Plugin } from "ckeditor5/src/core";
 import EditorAdvancedImageEditing from "./EditorAdvancedImageEditing";
 import EditorAdvancedImageUi from "./EditorAdvancedImageUI";
-import EditorAdvancedImageCommand from "./EditorAdvancedImageCommand";
 
 /**
  * The Editor Advanced Image plugin.
@@ -24,11 +23,7 @@ class EditorAdvancedImage extends Plugin {
    * @inheritdoc
    */
   static get requires() {
-    return [
-      EditorAdvancedImageEditing,
-      EditorAdvancedImageUi,
-      EditorAdvancedImageCommand,
-    ];
+    return [EditorAdvancedImageEditing, EditorAdvancedImageUi];
   }
 
   /**

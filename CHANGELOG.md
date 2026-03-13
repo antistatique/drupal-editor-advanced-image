@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - update CI and Dockerfile versions
 
+### Security
+- upgrade all javascript dependencies
+
 ## [3.1.3] - 2026-03-13
 ### Fixed
 - fix invalid CKEditor plugin registration - Issue #3577482 by arturs.v, rhayun, teebo, riaan burger, wengerk, lisotton, thomas kaisuka: Advanced image plugin breaks CKEditor after Drupal core 11.3.4 update

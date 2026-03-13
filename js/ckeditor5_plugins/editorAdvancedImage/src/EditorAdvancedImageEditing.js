@@ -123,6 +123,11 @@ function modelAttributeToDataAttribute() {
     }
 
     const viewElement = conversionApi.mapper.toViewElement(item);
+
+    if (!viewElement) {
+      return;
+    }
+
     const imageInFigure = Array.from(viewElement.getChildren()).find(
       (child) => child.name === "img",
     );

@@ -14,7 +14,7 @@
   "devDependencies": {
     "@ckeditor/ckeditor5-dev-utils": "^43.0.1",
     "@ckeditor/ckeditor5-image": "^45.2.0",
-    "ckeditor5": "~45.0.0",
+    "ckeditor5": "~47.6.0",
     "eslint": "^8.57.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^9.1.0",

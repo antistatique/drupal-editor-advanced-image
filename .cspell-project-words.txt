@@ -39,3 +39,4 @@ wapmorgan
 wengerk
 imagetextalternative
 interactable
+codesniffer

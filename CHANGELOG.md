@@ -11,6 +11,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - fix: add 'codesniffer' to cspell ignore wordlist
 
+### Security
+- chore(deps): update all javascript dependencies
+
 ## [3.1.4] - 2026-06-08
 ### Changed
 - update CI and Dockerfile versions

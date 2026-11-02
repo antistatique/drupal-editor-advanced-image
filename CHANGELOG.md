@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - ci: run Upgrade Status on Drupal 11.3 to report Drupal 12 readiness
 - docs(readme): update the supported Drupal versions
 - ci: run Upgrade Status on Drupal 11.4
+- docs(gitlab-ci): refresh outdated Drupal versions in comments
 
 ### Removed
 - ci: remove PhpDeprecationDetector (phpdd) job, tool and docs

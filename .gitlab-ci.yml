@@ -29,15 +29,15 @@ include:
 # Docs at https://git.drupalcode.org/project/gitlab_templates/-/blob/1.0.x/includes/include.drupalci.variables.yml
 ################
 variables:
-  # Opt in to testing current minor against max supported PHP version.
+  # Opt in to testing current minor against max supported PHP version (8.5).
   OPT_IN_TEST_MAX_PHP: '1'
-  # Opt out to testing previous minor (Drupal 11.1.x).
+  # Opt out of testing previous minor (Drupal 11.3.x).
   OPT_IN_TEST_PREVIOUS_MINOR: '0'
-  # Opt in to testing minor (Drupal 11.3-dev).
+  # Opt in to testing next minor (Drupal 11.5.x-dev).
   OPT_IN_TEST_NEXT_MINOR: '1'
   # The 3.x branch of the module requires Drupal 10.5 minimum.
   CORE_PREVIOUS_PHP_MIN: '8.3'
-  # Opt in to testing $CORE_MAJOR_DEVELOPMENT (currently Drupal 11).
+  # Opt in to testing $CORE_MAJOR_DEVELOPMENT (Drupal 12, main-dev).
   OPT_IN_TEST_NEXT_MAJOR: '1'
 
 # This module wants to strictly comply with Drupal's coding standards.

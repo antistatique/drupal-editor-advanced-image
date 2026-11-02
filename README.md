@@ -26,21 +26,15 @@ Allows to define the following attributes on an Image:
 
 | Drupal Core | CKEditor | Editor Advanced Image |
 |:-----------:|:--------:|:---------------------:|
-|    8.7.x    |   4.x    |          1.x          |
-|    8.8.x    |   4.x    |     8.x-2.0-beta1     |
-|     9.x     |   4.x    |        8.x-2.1        |
-|     9.x     |   5.x    |        8.x-2.1        |
-|    10.x     |   4.x    |        8.x-2.1        |
-|    10.x     |   5.x    |    8.x-2.1 or 3.x     |
+|     8.x     |   4.x    |     8.x-2.0-beta1     |
+|     9.x     | 4.x, 5.x |        8.x-2.1        |
+|    10.x     | 4.x, 5.x |    8.x-2.1 or 3.x     |
 |    11.x     |   5.x    |         3.1.x         |
+|    12.x     |   5.x    |         3.1.x         |
 
 ## Dependencies
 
-The Drupal 11 version of Editor Advanced Image requires
-[Editor](https://www.drupal.org/project/editor) and
-[CKEditor 5](https://ckeditor.com/ckeditor-5/).
-
-The Drupal 10 version of Editor Advanced Image requires
+The Drupal 10, Drupal 11 & Drupal 12 versions of Editor Advanced Image require
 [Editor](https://www.drupal.org/project/editor) and
 [CKEditor 5](https://ckeditor.com/ckeditor-5/).
 

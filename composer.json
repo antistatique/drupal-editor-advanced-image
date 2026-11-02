@@ -28,7 +28,7 @@
   },
   "license": "GPL-2.0-or-later",
   "require-dev": {
-    "drupal/coder": "^8.3"
+    "drupal/coder": "^8.3 || ^9"
   },
   "config": {
     "allow-plugins": {

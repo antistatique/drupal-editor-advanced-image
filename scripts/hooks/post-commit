@@ -6,7 +6,3 @@ docker compose exec drupal phpmd analyze ./web/modules/contrib/editor_advanced_i
 
 echo "\n🛂  \033[0;32mRunning PHP Copy/Paste Detector ...\033[0m"
 docker compose exec drupal phpcpd ./web/modules/contrib/editor_advanced_image/src --suffix .php --suffix .module --suffix .inc --suffix .install --suffix .test --suffix .profile --suffix .theme --suffix .css --suffix .info --suffix .txt --exclude *.md --exclude *.info.yml --exclude tests --exclude vendor/ --exclude node_modules/
-
-echo "\n🍫  \033[0;32mRunning PhpDeprecationDetector ...\033[0m"
-docker compose exec drupal phpdd ./web/modules/contrib/editor_advanced_image/ --file-extensions php,module,inc,install,test,profile,theme,info --exclude vendor --exclude node_modules
-

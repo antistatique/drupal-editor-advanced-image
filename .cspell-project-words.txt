@@ -22,10 +22,8 @@ labelview
 libbz
 nonwords
 passowrd
-phpcf
 PHPCPD
 phpcpd
-phpdd
 phplint
 realelement
 reseting
@@ -35,7 +33,6 @@ ulimits
 unusedcode
 viewcollection
 visibilit
-wapmorgan
 wengerk
 imagetextalternative
 interactable

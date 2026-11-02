@@ -8,6 +8,9 @@ use Drupal\filter\Entity\FilterFormat;
 use Drupal\FunctionalJavascriptTests\WebDriverTestBase;
 use Drupal\Tests\ckeditor5\Traits\CKEditor5TestTrait;
 use Drupal\Tests\TestFileCreationTrait;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\Attributes\RunTestsInSeparateProcesses;
 
 /**
  * Ensure the CKE5 editor_advanced_image balloon works.
@@ -18,6 +21,10 @@ use Drupal\Tests\TestFileCreationTrait;
  *
  * @requires module ckeditor5
  */
+#[Group('editor_advanced_image')]
+#[Group('editor_advanced_image_functional')]
+#[Group('editor_advanced_image_ckeditor5')]
+#[RunTestsInSeparateProcesses]
 class CKEditor5EditorAdvancedImageDialogTest extends WebDriverTestBase {
 
   use CKEditor5TestTrait;
@@ -156,6 +163,7 @@ class CKEditor5EditorAdvancedImageDialogTest extends WebDriverTestBase {
    *
    * @dataProvider providerAttributesTest
    */
+  #[DataProvider('providerAttributesTest')]
   public function testAttributes(string $attribute_name, string $expected_input_label): void {
     // Update text format and editor to allow editing of this attribute through
     // the EditorAdvancedImage plugin.

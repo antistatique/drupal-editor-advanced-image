@@ -7,6 +7,10 @@ namespace Drupal\Tests\editor_advanced_image\Unit;
 use Drupal\editor\EditorInterface;
 use Drupal\editor_advanced_image\Plugin\CKEditor5Plugin\EditorAdvancedImage;
 use Drupal\Tests\UnitTestCase;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\CoversMethod;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Group;
 use Symfony\Component\Yaml\Yaml;
 
 /**
@@ -18,6 +22,15 @@ use Symfony\Component\Yaml\Yaml;
  *
  * @internal
  */
+#[CoversClass(\Drupal\editor_advanced_image\Plugin\CKEditor5Plugin\EditorAdvancedImage::class)]
+#[CoversMethod(\Drupal\editor_advanced_image\Plugin\CKEditor5Plugin\EditorAdvancedImage::class, 'getDynamicPluginConfig')]
+#[CoversMethod(\Drupal\editor_advanced_image\Plugin\CKEditor5Plugin\EditorAdvancedImage::class, 'validChoices')]
+#[CoversMethod(\Drupal\editor_advanced_image\Plugin\CKEditor5Plugin\EditorAdvancedImage::class, 'getElementsSubset')]
+#[CoversMethod(\Drupal\editor_advanced_image\Plugin\CKEditor5Plugin\EditorAdvancedImage::class, 'getAllowedStringForSupportedAttribute')]
+#[CoversMethod(\Drupal\editor_advanced_image\Plugin\CKEditor5Plugin\EditorAdvancedImage::class, 'getAllowedHtmlForSupportedAttribute')]
+#[Group('editor_advanced_image')]
+#[Group('editor_advanced_image_unit')]
+#[Group('editor_advanced_image_ckeditor5')]
 class CKEditor5EditorAdvancedImagePluginTest extends UnitTestCase {
 
   /**
@@ -25,6 +38,7 @@ class CKEditor5EditorAdvancedImagePluginTest extends UnitTestCase {
    *
    * @dataProvider providerGetDynamicPluginConfig
    */
+  #[DataProvider('providerGetDynamicPluginConfig')]
   public function testGetDynamicPluginConfig(array $configuration, array $expected_dynamic_config): void {
     // Read the CKEditor 5 plugin's static configuration from YAML.
     $ckeditor5_plugin_definitions = Yaml::parseFile(__DIR__ . '/../../../editor_advanced_image.ckeditor5.yml');
@@ -212,6 +226,7 @@ class CKEditor5EditorAdvancedImagePluginTest extends UnitTestCase {
    *
    * @dataProvider providerGetElementsSubset
    */
+  #[DataProvider('providerGetElementsSubset')]
   public function testGetElementsSubset(array $configuration, array $expected_subset): void {
     $plugin = new EditorAdvancedImage($configuration, 'editor_advanced_image_image', NULL);
     $this->assertSame($expected_subset, $plugin->getElementsSubset());
@@ -290,6 +305,7 @@ class CKEditor5EditorAdvancedImagePluginTest extends UnitTestCase {
    *
    * @dataProvider providerGetAllowedStringForSupportedAttribute
    */
+  #[DataProvider('providerGetAllowedStringForSupportedAttribute')]
   public function testGetAllowedStringForSupportedAttribute(string $attribute, ?string $expected_allowed_attr, ?string $expected_exception_class = NULL): void {
     if ($expected_exception_class !== NULL) {
       $this->expectException($expected_exception_class);
@@ -317,6 +333,7 @@ class CKEditor5EditorAdvancedImagePluginTest extends UnitTestCase {
    *
    * @dataProvider providerGetAllowedHtmlForSupportedAttribute
    */
+  #[DataProvider('providerGetAllowedHtmlForSupportedAttribute')]
   public function testGetAllowedHtmlForSupportedAttribute(string $attribute, ?string $expected_allowed_html, ?string $expected_exception_class = NULL): void {
     if ($expected_exception_class !== NULL) {
       $this->expectException($expected_exception_class);

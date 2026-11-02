@@ -8,6 +8,8 @@ use Drupal\filter\Entity\FilterFormat;
 use Drupal\FunctionalJavascriptTests\WebDriverTestBase;
 use Drupal\Tests\ckeditor5\Traits\CKEditor5TestTrait;
 use Drupal\Tests\editor_advanced_image\Traits\CKEditor5InteractionTestTrait;
+use PHPUnit\Framework\Attributes\Group;
+use PHPUnit\Framework\Attributes\RunTestsInSeparateProcesses;
 
 /**
  * Ensure the CKE5 editor_advanced_image editor formats forms.
@@ -18,6 +20,10 @@ use Drupal\Tests\editor_advanced_image\Traits\CKEditor5InteractionTestTrait;
  *
  * @requires module ckeditor5
  */
+#[Group('editor_advanced_image')]
+#[Group('editor_advanced_image_functional')]
+#[Group('editor_advanced_image_ckeditor5')]
+#[RunTestsInSeparateProcesses]
 class CKEditor5EditorAdvancedImageEditorFormatTest extends WebDriverTestBase {
   use CKEditor5TestTrait;
   use CKEditor5InteractionTestTrait;

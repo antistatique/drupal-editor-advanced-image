@@ -8,12 +8,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - feat: declare Drupal 12 compatibility in `core_version_requirement`
 - build(deps): allow drupal/coder ^9
+- test: add PHPUnit attributes, keeping the doc-comment annotations for Drupal 10
 
 ### Changed
 - ci: run Upgrade Status on Drupal 11.3 to report Drupal 12 readiness
 - docs(readme): update the supported Drupal versions
 - ci: run Upgrade Status on Drupal 11.4
 - docs(gitlab-ci): refresh outdated Drupal versions in comments
+- ci(gitlab-ci): strip the PHPUnit attributes for phpstan on previous major
 
 ### Removed
 - ci: remove PhpDeprecationDetector (phpdd) job, tool and docs
